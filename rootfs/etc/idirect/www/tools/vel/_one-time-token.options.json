@@ -1,0 +1,22 @@
+{
+    "POST": {
+        "parameters": {
+            "comp_attr_metadata_array": [],
+            "attr_metadata_array": [
+                {
+                    "default_value": "",
+                    "attr_name": "token",
+                    "attr_display_name": "one_time_token",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "disabled": 0,
+                    "option_list": []
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,99 @@
+{
+    "POST": {
+        "parameters": {
+            "comp_attr_metadata_array": [],
+            "attr_metadata_array": [
+                {
+                    "default_value": "",
+                    "attr_name": "1_translation",
+                    "attr_display_name": "translation",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "MHz",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "read_only": 1,
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/odu/lnb/0",
+                        "data",
+                        "translation"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "1_spectral_inversion",
+                    "attr_display_name": "spectral_inversion",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "read_only": 1,
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/odu/lnb/0",
+                        "data",
+                        "spectral_inversion"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "1_reference",
+                    "attr_display_name": "reference",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "MHz",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "read_only": 1,
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/odu/lnb/0",
+                        "data",
+                        "reference"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "1_tone_enabled",
+                    "attr_display_name": "tone_enabled",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "read_only": 1,
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/odu/lnb/0",
+                        "data",
+                        "tone_enabled"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "1_dc_voltage",
+                    "attr_display_name": "dc_voltage",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "Volts",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "read_only": 1,
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/odu/lnb/0",
+                        "data",
+                        "dc_voltage"
+                    ]
+                }
+            ]
+        }
+    }
+}

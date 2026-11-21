@@ -1,0 +1,480 @@
+{
+    "POST": {
+        "parameters": {
+            "comp_attr_metadata_array": [],
+            "attr_metadata_array": [
+                {
+                    "default_value": "",
+                    "attr_name": "name",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "read_only":1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/odu/antenna/0",
+                        "data",
+                        "snmp",
+                        "idsACSStatusSatName"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "position",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "°",
+                    "read_only":1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/odu/antenna/0",
+                        "data",
+                        "snmp",
+                        "idsACSStatusSatLong"
+                    ],
+                    "field_details": {
+                        "chart_options": {
+                          "resource":"terminal/odu/antenna/0",
+                          "respath":["snmp"],
+                          "field":"idsACSStatusSatLong",
+                          "type":"popover",
+                          "unit":"°",
+                          "min": -180,
+                          "max": 180,
+                          "buffer": false,
+                          "maxpoints": 150,
+                          "resolutionbuffer": 30000,
+                          "resolutionlive": 5000,
+                          "tooltipoptions": {
+                            "title":"Position",
+                            "placement":"left"
+                          }
+                        },
+                        "directive": "nmsweb-html",
+                        "template": "templates/nmsweb/module/terminal/directive/input-chart.tpl"
+                    }
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "satellite_signal",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "read_only":1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/odu/antenna/0",
+                        "data",
+                        "snmp",
+                        "idsACSStatusSatSignal"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "frequency",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "MHz",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "read_only":1,
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/odu/antenna/0",
+                        "data",
+                        "snmp",
+                        "idsACSStatusSatFreq"
+                    ],
+                    "field_details": {
+                        "chart_options": {
+                          "resource":"terminal/odu/antenna/0",
+                          "respath":["snmp"],
+                          "field":"idsACSStatusSatFreq",
+                          "type":"popover",
+                          "unit":"MHz",
+                          "min": 0,
+                          "max": 30000,
+                          "buffer": false,
+                          "maxpoints": 150,
+                          "resolutionbuffer": 30000,
+                          "resolutionlive": 5000,
+                          "tooltipoptions": {
+                            "title":"Frequency",
+                            "placement":"left"
+                          }
+                        },
+                        "directive": "nmsweb-html",
+                        "template": "templates/nmsweb/module/terminal/directive/input-chart.tpl"
+                    }
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "latitude",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "°",
+                    "read_only":1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/odu/antenna/0",
+                        "data",
+                        "snmp",
+                        "idsACSStatusLat"
+                    ],
+                    "field_details": {
+                        "chart_options": {
+                          "resource":"terminal/odu/antenna/0",
+                          "respath":["snmp"],
+                          "field":"idsACSStatusLat",
+                          "type":"popover",
+                          "unit":"°",
+                          "min": 0,
+                          "max": 90,
+                          "buffer": false,
+                          "maxpoints": 150,
+                          "resolutionbuffer": 30000,
+                          "resolutionlive": 5000,
+                          "tooltipoptions": {
+                            "title":"Latitude",
+                            "placement":"left"
+                          }
+                        },
+                        "directive": "nmsweb-html",
+                        "template": "templates/nmsweb/module/terminal/directive/input-chart.tpl"
+                    }
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "longitude",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "°",
+                    "read_only":1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/odu/antenna/0",
+                        "data",
+                        "snmp",
+                        "idsACSStatusLong"
+                    ],
+                    "field_details": {
+                        "chart_options": {
+                          "resource":"terminal/odu/antenna/0",
+                          "respath":["snmp"],
+                          "field":"idsACSStatusLong",
+                          "type":"popover",
+                          "unit":"°",
+                          "min": -180,
+                          "max": 180,
+                          "buffer": false,
+                          "maxpoints": 150,
+                          "resolutionbuffer": 30000,
+                          "resolutionlive": 5000,
+                          "tooltipoptions": {
+                            "title":"Longitude",
+                            "placement":"left"
+                          }
+                        },
+                        "directive": "nmsweb-html",
+                        "template": "templates/nmsweb/module/terminal/directive/input-chart.tpl"
+                    }
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "heading",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "°",
+                    "max_length": 0,
+                    "read_only":1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/odu/antenna/0",
+                        "data",
+                        "snmp",
+                        "idsACSStatusHeading"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "gps",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "read_only":1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/odu/antenna/0",
+                        "data",
+                        "snmp",
+                        "idsACSStatusGPS"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "lock",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "read_only":1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/odu/antenna/0",
+                        "data",
+                        "snmp",
+                        "idsACSStatusLock"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "mute",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "read_only":1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/odu/antenna/0",
+                        "data",
+                        "snmp",
+                        "idsACSStatusMute"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "delay",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "read_only":1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/odu/antenna/0",
+                        "data",
+                        "snmp",
+                        "idsACSStatusDelay"
+                    ],
+                    "field_details": {
+                        "chart_options": {
+                          "resource":"terminal/odu/antenna/0",
+                          "respath":["snmp"],
+                          "field":"idsACSStatusDelay",
+                          "type":"popover",
+                          "unit":"seconds",
+                          "buffer": false,
+                          "maxpoints": 150,
+                          "resolutionbuffer": 30000,
+                          "resolutionlive": 5000,
+                          "tooltipoptions": {
+                            "title":"Delay",
+                            "placement":"left"
+                          }
+                        },
+                        "directive": "nmsweb-html",
+                        "template": "templates/nmsweb/module/terminal/directive/input-chart.tpl"
+                    }
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "azimuth",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "°",
+                    "read_only":1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/odu/antenna/0",
+                        "data",
+                        "snmp",
+                        "idsACSStatusAZ"
+                    ],
+                    "field_details": {
+                        "chart_options": {
+                          "resource":"terminal/odu/antenna/0",
+                          "respath":["snmp"],
+                          "field":"idsACSStatusAZ",
+                          "type":"popover",
+                          "unit":"°",
+                          "min": 0,
+                          "max": 360,
+                          "buffer": false,
+                          "maxpoints": 150,
+                          "resolutionbuffer": 30000,
+                          "resolutionlive": 5000,
+                          "tooltipoptions": {
+                            "title":"Azimuth",
+                            "placement":"left"
+                          }
+                        },
+                        "directive": "nmsweb-html",
+                        "template": "templates/nmsweb/module/terminal/directive/input-chart.tpl"
+                    }
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "elevation",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "°",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "read_only":1,
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/odu/antenna/0",
+                        "data",
+                        "snmp",
+                        "idsACSStatusEL"
+                    ],
+                    "field_details": {
+                        "chart_options": {
+                          "resource":"terminal/odu/antenna/0",
+                          "respath":["snmp"],
+                          "field":"idsACSStatusEL",
+                          "type":"popover",
+                          "unit":"°",
+                          "min": 0,
+                          "max": 360,
+                          "buffer": false,
+                          "maxpoints": 150,
+                          "resolutionbuffer": 30000,
+                          "resolutionlive": 5000,
+                          "tooltipoptions": {
+                            "title":"Elevation",
+                            "placement":"left"
+                          }
+                        },
+                        "directive": "nmsweb-html",
+                        "template": "templates/nmsweb/module/terminal/directive/input-chart.tpl"
+                    }
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "cross_level",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "°",
+                    "max_length": 0,
+                    "read_only":1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/odu/antenna/0",
+                        "data",
+                        "snmp",
+                        "idsACSStatusCL"
+                    ],
+                    "field_details": {
+                        "chart_options": {
+                          "resource":"terminal/odu/antenna/0",
+                          "respath":["snmp"],
+                          "field":"idsACSStatusCL",
+                          "type":"popover",
+                          "unit":"°",
+                          "min": 0,
+                          "max": 360,
+                          "buffer": false,
+                          "maxpoints": 150,
+                          "resolutionbuffer": 30000,
+                          "resolutionlive": 5000,
+                          "tooltipoptions": {
+                            "title":"Cross Level",
+                            "placement":"left"
+                          }
+                        },
+                        "directive": "nmsweb-html",
+                        "template": "templates/nmsweb/module/terminal/directive/input-chart.tpl"
+                    }
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "tracking",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "read_only":1,
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/odu/antenna/0",
+                        "data",
+                        "snmp",
+                        "idsACSStatusTrack"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "searching",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "read_only":1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/odu/antenna/0",
+                        "data",
+                        "snmp",
+                        "idsACSStatusSearch"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "altitude",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "read_only":1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/status/location/remote",
+                        "data",
+                        "altitude"
+                    ]
+                }
+            ]
+        }
+    }
+}

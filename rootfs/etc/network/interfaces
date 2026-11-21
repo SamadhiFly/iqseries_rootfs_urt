@@ -1,0 +1,20 @@
+# interface file from overlay
+
+auto lo
+        iface lo inet loopback
+
+auto eth0
+        iface eth0 inet manual
+        mtu 1540
+
+auto eth1
+        iface eth1 inet static
+        address 192.168.1.1
+        netmask 255.255.255.0
+        mtu 1540
+
+auto eth1:5000
+        iface eth1:5000 inet static
+        address 192.168.0.1
+        netmask 255.255.255.0
+        mtu 1540

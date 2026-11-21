@@ -1,0 +1,608 @@
+{
+    "POST": {
+        "parameters": {
+            "comp_attr_metadata_array": [],
+            "attr_metadata_array": [
+                {
+                    "default_value": "",
+                    "attr_name": "network",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "read_only":1,
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/status/network",
+                        "data",
+                        "state"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "main_satellite_receiver",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "read_only":1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/rx/0",
+                        "data",
+                        "state"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "satellite_transmit",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "read_only":1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/tx/0",
+                        "data",
+                        "state"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "maximum_power",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "dBm",
+                    "max_length": 0,
+                    "read_only":1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/tx",
+                        "data",
+                        "transmitters",
+                        "0",
+                        "power_max"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "initial_transmit_power",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "dBm",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "read_only":1,
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/tx",
+                        "data",
+                        "transmitters",
+                        "0",
+                        "power_initial"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "symbol_rate",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "read_only":1,
+                    "unit": "Ksps",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": []
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "modulation",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "read_only":1,
+                    "attr_type": "text",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": []
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "fec_rate",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "read_only":1,
+                    "attr_type": "text",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": []
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "uplink_center_frequency",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "read_only":1,
+                    "attr_type": "text",
+                    "unit": "MHz",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": []
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "power_relative_to_the_nominal_carrier",
+                    "hide_on_GUI": false,
+                    "unit": "dBm",
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "max_length": 0,
+                    "read_only": 1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "field_details": {
+                        "chart_options": {
+                          "resource":"terminal/tx",
+                          "respath":["available_carriers","0"],
+                          "field":"power",
+                          "type":"popover",
+                          "unit":"dBm",
+                          "buffer": true,
+                          "maxpoints": 150,
+                          "resolutionbuffer": 30000,
+                          "resolutionlive": 5000,
+                          "tooltipoptions": {
+                            "title":"Power relative to the nominal carrier",
+                            "placement":"left"
+                          }
+                        },
+                        "directive": "nmsweb-html",
+                        "template": "templates/nmsweb/module/terminal/directive/input-chart.tpl"
+                    }
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "payload_size",
+                    "hide_on_GUI": false,
+                    "unit": "Bytes",
+                    "attr_required": 0,
+                    "read_only":1,
+                    "attr_type": "text",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": []
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "reference_carrier",
+                    "attr_display_name": "symbol_rate_reference_carrier",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "read_only":1,
+                    "dependencies": "",
+                    "unit": "Ksps",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/tx",
+                        "data",
+                        "reference_carrier",
+                        "symbol_rate"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "c_over_n",
+                    "attr_display_name": "c_over_n_reference_carrier",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "read_only":1,
+                    "dependencies": "",
+                    "unit": "dB",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/tx",
+                        "data",
+                        "reference_carrier",
+                        "c_over_n"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "point_of_report",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "read_only": 1,
+                    "option_list": []
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "downlink_center_frequency_rc1",
+                    "attr_display_name": "downlink_center_frequency",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "MHz",
+                    "read_only":1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/rx/0",
+                        "",
+                        ""
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "symbol_rate_rc1",
+                    "attr_display_name": "symbol_rate",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "Ksps",
+                    "max_length": 0,
+                    "read_only":1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/rx/0",
+                        "data",
+                        "symbol_rate"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "receive_role_rc1",
+                    "attr_display_name": "receiver_role",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "read_only":1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/rx/0",
+                        "data",
+                        "role"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "beam_id_rc1",
+                    "attr_display_name": "beam_id",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "read_only": 1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/rx/0",
+                        "data",
+                        "beam_id"
+                    ],
+                    "field_details": {
+                        "chart_options": {
+                          "resource":"terminal/rx/0",
+                          "field":"beam_id",
+                          "type":"popover",
+                          "unit":"",
+                          "buffer": false,
+                          "maxpoints": 150,
+                          "resolutionbuffer": 30000,
+                          "resolutionlive": 5000,
+                          "tooltipoptions": {
+                            "title":"Beam ID",
+                            "placement":"left"
+                          }
+                        },
+                        "directive": "nmsweb-html",
+                        "template": "templates/nmsweb/module/terminal/directive/input-chart.tpl"
+                    }
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "receive_status_rc1",
+                    "attr_display_name": "receiver_status",
+                    "tooltips": [{
+                        "title": "Receiver Status",
+                        "placement": "left",
+                        "content": "<ul><li>'Locked': Receiver locked</li><li>'Waiting for Tuner Lock': First stage of receiver lock</li><li>'Waiting for Demod Lock': Second stage of receiver lock</li><li>'Waiting for NCR Lock': Third and final stage of receiver lock</li><li>'Off': Receiver off</li></ul>"
+                    }],
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "read_only": 1,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/rx/0",
+                        "data",
+                        "state"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "receive_composite_power_rc1",
+                    "attr_display_name": "receiver_composite_power",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "dBm",
+                    "max_length": 0,
+                    "read_only": 1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/rx/0",
+                        "data",
+                        "power"
+                    ],
+                    "field_details": {
+                        "chart_options": {
+                          "resource":"terminal/rx/0",
+                          "field":"power",
+                          "type":"popover",
+                          "unit":"dBm",
+                          "buffer": false,
+                          "maxpoints": 150,
+                          "resolutionbuffer": 30000,
+                          "resolutionlive": 5000,
+                          "tooltipoptions": {
+                            "title":"Receiver Composite Power",
+                            "placement":"left"
+                          }
+                        },
+                        "directive": "nmsweb-html",
+                        "template": "templates/nmsweb/module/terminal/directive/input-chart.tpl"
+                    }
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "receive_snr_rc1",
+                    "attr_display_name": "receiver_snr",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "dB",
+                    "max_length": 0,
+                    "read_only": 1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/rx/0",
+                        "data",
+                        "snr"
+                    ],
+                    "field_details": {
+                        "chart_options": {
+                          "resource":"terminal/rx/0",
+                          "field":"snr",
+                          "type":"popover",
+                          "unit":"dB",
+                          "buffer": false,
+                          "maxpoints": 150,
+                          "resolutionbuffer": 30000,
+                          "resolutionlive": 5000,
+                          "tooltipoptions": {
+                            "title":"Receiver SNR",
+                            "placement":"left"
+                          }
+                        },
+                        "directive": "nmsweb-html",
+                        "template": "templates/nmsweb/module/terminal/directive/input-chart.tpl"
+                    }
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "downlink_center_frequency_rc2",
+                    "attr_display_name": "downlink_center_frequency",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "MHz",
+                    "read_only":1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/rx/1",
+                        "",
+                        ""
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "beam_id_rc2",
+                    "attr_display_name": "beam_id",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "read_only": 1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/rx/1",
+                        "data",
+                        "beam_id"
+                    ],
+                    "field_details": {
+                        "chart_options": {
+                          "resource":"terminal/rx/1",
+                          "field":"beam_id",
+                          "type":"popover",
+                          "unit":"",
+                          "buffer": false,
+                          "maxpoints": 150,
+                          "resolutionbuffer": 30000,
+                          "resolutionlive": 5000,
+                          "tooltipoptions": {
+                            "title":"Beam ID",
+                            "placement":"left"
+                          }
+                        },
+                        "directive": "nmsweb-html",
+                        "template": "templates/nmsweb/module/terminal/directive/input-chart.tpl"
+                    }
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "symbol_rate_rc2",
+                    "attr_display_name": "symbol_rate",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "Ksps",
+                    "max_length": 0,
+                    "read_only":1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/rx/1",
+                        "data",
+                        "symbol_rate"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "receive_role_rc2",
+                    "attr_display_name": "receiver_role",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "read_only":1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/rx/1",
+                        "data",
+                        "role"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "receive_status_rc2",
+                    "attr_display_name": "receiver_status",
+                    "tooltips": [{
+                        "title": "Receiver Status",
+                        "placement": "left",
+                        "content": "<ul><li>'Locked': Receiver locked</li><li>'Waiting for Tuner Lock': First stage of receiver lock</li><li>'Waiting for Demod Lock': Second stage of receiver lock</li><li>'Waiting for NCR Lock': Third and final stage of receiver lock</li><li>'Off': Receiver off</li></ul>"
+                    }],
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "read_only": 1,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/rx/1",
+                        "data",
+                        "state"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "receive_composite_power_rc2",
+                    "attr_display_name": "receiver_composite_power",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "dBm",
+                    "max_length": 0,
+                    "read_only": 1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/rx/1",
+                        "data",
+                        "power"
+                    ],
+                    "field_details": {
+                        "chart_options": {
+                          "resource":"terminal/rx/1",
+                          "field":"power",
+                          "type":"popover",
+                          "unit":"dBm",
+                          "buffer": false,
+                          "maxpoints": 150,
+                          "resolutionbuffer": 30000,
+                          "resolutionlive": 5000,
+                          "tooltipoptions": {
+                            "title":"Receiver Composite Power",
+                            "placement":"left"
+                          }
+                        },
+                        "directive": "nmsweb-html",
+                        "template": "templates/nmsweb/module/terminal/directive/input-chart.tpl"
+                    }
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "receive_snr_rc2",
+                    "attr_display_name": "receiver_snr",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "dB",
+                    "max_length": 0,
+                    "read_only": 1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/rx/1",
+                        "data",
+                        "snr"
+                    ],
+                    "field_details": {
+                        "chart_options": {
+                          "resource":"terminal/rx/1",
+                          "field":"snr",
+                          "type":"popover",
+                          "unit":"dB",
+                          "buffer": false,
+                          "maxpoints": 150,
+                          "resolutionbuffer": 30000,
+                          "resolutionlive": 5000,
+                          "tooltipoptions": {
+                            "title":"Receiver SNR",
+                            "placement":"left"
+                          }
+                        },
+                        "directive": "nmsweb-html",
+                        "template": "templates/nmsweb/module/terminal/directive/input-chart.tpl"
+                    }
+                }
+            ]
+        }
+    }
+}

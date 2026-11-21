@@ -1,0 +1,394 @@
+{
+    "POST": {
+        "parameters": {
+            "comp_attr_metadata_array": [
+                {
+                    "comp_attr_type": "terminal_events",
+                    "is_unique": false,
+                    "dependencies": "",
+                    "comp_attr_required": 0,
+                    "comp_attr_id": 412034,
+                    "min_length": 0,
+                    "comp_attr_display_name": "",
+                    "read_only": 1,
+                    "default_value": "abc",
+                    "comp_attr_name": "terminal_events",
+                    "hide_on_GUI": false,
+                    "max_length": 0,
+                    "attr_metadata_array": [
+                        {
+                            "dependencies": "",
+                            "furtherinfo": "",
+                            "min_length": 0,
+                            "read_only": 0,
+                            "default_value": "123",
+                            "attr_name": "up_time",
+                            "attr_required": 0,
+                            "attr_display_name": "up_time",
+                            "option_list": {},
+                            "range_end": "",
+                            "attr_type": "text",
+                            "furtherinfolink": "",
+                            "unit": "",
+                            "range_start": "",
+                            "format": "",
+                            "attr_id": 1,
+                            "keyname": "",
+                            "max_length": 0
+                        },
+                        {
+                            "dependencies": "",
+                            "furtherinfo": "",
+                            "min_length": 0,
+                            "read_only": 0,
+                            "default_value": "789",
+                            "attr_name": "description",
+                            "attr_required": 0,
+                            "attr_display_name": "description",
+                            "option_list": {},
+                            "range_end": "",
+                            "attr_type": "text",
+                            "furtherinfolink": "",
+                            "unit": "",
+                            "range_start": "",
+                            "format": "",
+                            "attr_id": 3,
+                            "keyname": "",
+                            "max_length": 0
+                        }
+                    ]
+                }
+            ],
+            "attr_metadata_array": [
+                {
+                    "default_value": "",
+                    "attr_name": "model_type",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "read_only": 1,
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/identity",
+                        "data",
+                        "model"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "terminal_type",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "read_only": 1,
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/identity",
+                        "data",
+                        "openamip",
+                        "rftermtype"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "serial_number",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "read_only": 1,
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/identity",
+                        "data",
+                        "serial_number"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "tpk",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "read_only": 1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/identity",
+                        "data",
+                        "tpk"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "software_version",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "read_only": 1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/identity",
+                        "data",
+                        "version"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "cpu_load",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "%",
+                    "read_only": 1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/device/performance",
+                        "data",
+                        "cpu_load"
+                    ],
+                    "field_details": {
+                        "chart_options": {
+                            "resource": "terminal/device/performance",
+                            "field": "cpu_load",
+                            "type": "popover",
+                            "unit": "%",
+                            "min": 0,
+                            "max": 100,
+                            "maxpoints": 150,
+                            "buffer": true,
+                            "resolutionbuffer": 30000,
+                            "resolutionlive": 5000,
+                            "tooltipoptions": {
+                                "title": "CPU Load",
+                                "placement": "left"
+                            }
+                        }
+                    }
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "memory_use",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "%",
+                    "read_only": 1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/device/performance",
+                        "data",
+                        "memory"
+                    ],
+                    "field_details": {
+                        "chart_options": {
+                            "resource": "terminal/device/performance",
+                            "field": "memory",
+                            "type": "popover",
+                            "unit": "%",
+                            "min": 0,
+                            "max": 100,
+                            "buffer": true,
+                            "maxpoints": 150,
+                            "resolutionbuffer": 30000,
+                            "resolutionlive": 5000,
+                            "tooltipoptions": {
+                                "title": "Memory Use",
+                                "placement": "left"
+                            }
+                        }
+                    }
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "fan_status",
+                    "hide_on_GUI": true,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "read_only": 1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "",
+                        "",
+                        "",
+                        ""
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "temperature",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "°C",
+                    "max_length": 0,
+                    "read_only": 1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/device/temperature",
+                        "data",
+                        "overall_temp"
+                    ],
+                    "field_details": {
+                        "chart_options": {
+                            "resource": "terminal/device/temperature",
+                            "field": "overall_temp",
+                            "type": "popover",
+                            "unit": "°C",
+                            "min": 0,
+                            "buffer": true,
+                            "maxpoints": 150,
+                            "resolutionbuffer": 30000,
+                            "resolutionlive": 5000,
+                            "tooltipoptions": {
+                                "title": "Temperature",
+                                "placement": "left"
+                            }
+                        }
+                    }
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "network_status",
+                    "tooltips": [ {
+                        "title": "Network",
+                        "placement": "bottom",
+                        "content": "<ul><li>'IN_NETWORK': M=Normal bidirectional network operation</li><li>'IN_ACQUISITION': Acquisition process is underway with the hub</li><li>'WAITING_FOR_ACQUISITION': Remote is receiving a carrier and synchronizing to the network before starting acquisition</li><li>'DETECTED': Carrier is detected</li><li>'WAITING_FOR_RX_LOCK': Receiver is locking to the carrier</li><li>'RX_ONLY': For example, a multicast mode</li><li>'WRONG_NETWORK': Remote is not configured/authorized for the network it is receiving from</li><li>'RECOVERY_STACK - <reason>': Remote cannot enter network</li></ul>"
+                    } ],
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "read_only": 1,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/status/network",
+                        "data",
+                        "state"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "satellite_receiver",
+                    "tooltips": [ {
+                        "title": "Satellite Receiver",
+                        "placement": "bottom",
+                        "content": "<ul><li>'Locked': Receiver locked(NCR lock is skipped in GSC)</li><li>'Waiting for Tuner Lock': First stage of receiver lock</li><li>'Waiting for Demod Lock': Second stage of receiver lock</li><li>'Waiting for NCR Lock': Third and final stage of receiver lock</li><li>'Off': Receiver off</li></ul>"
+                    } ],
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "read_only": 1,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/rx/0",
+                        "data",
+                        "state"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "satellite_transmitter",
+                    "tooltips": [ {
+                        "title": "Satellite Transmitter",
+                        "placement": "bottom",
+                        "content": "<ul><li>'MUTED' or 'UNMUTED': The transmitter will be muted by any of the following conditions: not in network, external mute signal, OpenAMIP mute command."
+                    } ],
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "read_only": 1,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/tx/0",
+                        "data",
+                        "state"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "receive_snr",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "dB",
+                    "read_only": 1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/rx/0",
+                        "data",
+                        "snr"
+                    ]
+                },
+                {
+                    "attr_name": "link_list",
+                    "hide_on_GUI": false,
+                    "dependencies": "",
+                    "option_list": [],
+                    "attr_type": "nmsweb-html",
+                    "field_details": {
+                        "directive": "nmsweb-html",
+                        "template": "templates/nmsweb/module/terminal/directive/link-list-take-me-to.tpl"
+                    }
+                },
+                {
+                    "attr_name": "receiver_snr_chart",
+                    "hide_on_GUI": false,
+                    "dependencies": "",
+                    "option_list": [],
+                    "attr_type": "nmsweb-html",
+                    "field_details": {
+                        "chart_options": {
+                            "resource": "terminal/rx/0",
+                            "field": "snr",
+                            "type": "fieldset",
+                            "unit": "dB",
+                            "buffer": true,
+                            "maxpoints": 180,
+                            "resolutionbuffer": 30000,
+                            "resolutionlive": 5000,
+                            "tooltipoptions": {
+                                "title": "Receiver SNR",
+                                "placement": "left"
+                            }
+                        },
+                        "directive": "nmsweb-html",
+                        "template": "templates/nmsweb/module/terminal/directive/fieldset_chart.tpl"
+                    }
+                }
+
+            ]
+        }
+    }
+}

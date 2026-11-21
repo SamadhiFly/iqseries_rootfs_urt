@@ -1,0 +1,234 @@
+{
+    "POST": {
+        "parameters": {
+            "comp_attr_metadata_array": [],
+            "attr_metadata_array": [
+                {
+                    "attr_name": "rx_clear",
+                    "hide_on_GUI": false,
+                    "attr_required": 1,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": {
+                        "0": "Receiver 1"
+                    },
+                    "default_value": "0"
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "rf_frequency",
+                    "hide_on_GUI": false,
+                    "attr_required": 1,
+                    "attr_type": "double precision",
+                    "unit": "MHz",
+                    "range_start": "0",
+                    "range_end": "40000",
+                    "step": "0.0001",
+                    "dependencies": "",
+                    "option_list": []
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "symbol_rate",
+                    "hide_on_GUI": false,
+                    "attr_required": 1,
+                    "attr_type": "double precision",
+                    "unit": "Ksps",
+                    "max_length": 0,
+                    "range_start": "1000",
+                    "range_end": "45000",
+                    "step": "0.01",
+                    "dependencies": "",
+                    "option_list": []
+                },
+                {
+                    "attr_name": "rolloff",
+                    "attr_display_name": "rolloff",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "%",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": {
+                        "5": "5",
+                        "10": "10",
+                        "15": "15",
+                        "20": "20"
+                    },
+                    "default_value": "5"
+                },
+                {
+                    "default_value": "0",
+                    "attr_name": "spacecraft_longitude",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "float",
+                    "unit": "°",
+                    "range_start": "0",
+                    "range_end": "180",
+                    "step": "0.0001",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": []
+                },
+                {
+                    "attr_name": "spacecraft_longitude_direction",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_label": "",
+                    "disabled": 0,
+                    "option_list": {
+                        "East": "East",
+                        "West": "West"
+                    }
+                },
+                {
+                    "attr_name": "polarization",
+                    "hide_on_GUI": false,
+                    "attr_required": 1,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_label": "",
+                    "disabled": 0,
+                    "option_list": {
+                        "L": "Circular - Left",
+                        "R": "Circular - Right",
+                        "H": "Linear - Horizontal",
+                        "V": "Linear - Vertical"
+                    }
+                },
+                {
+                    "attr_name": "receive_polarization",
+                    "hide_on_GUI": false,
+                    "attr_required": 1,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_label": "",
+                    "disabled": 0,
+                    "option_list": {
+                        "L": "Left",
+                        "R": "Right",
+                        "H": "Horizontal",
+                        "V": "Vertical"
+                    }
+                },
+                {
+                    "attr_name": "transmit_polarization",
+                    "hide_on_GUI": false,
+                    "attr_required": 1,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_label": "",
+                    "disabled": 0,
+                    "option_list": {
+                        "L": "Left",
+                        "R": "Right",
+                        "H": "Horizontal",
+                        "V": "Vertical"
+                    }
+                },
+                {
+                    "attr_name": "modulation",
+                    "attr_display_name": "modulation",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_label": "",
+                    "option_list": {
+                        "": "-",
+                        "QPSK_1/4": "QPSK_1/4",
+                        "QPSK_1/3": "QPSK_1/3",
+                        "QPSK_2/5": "QPSK_2/5",
+                        "QPSK_1/2": "QPSK_1/2",
+                        "QPSK_3/5": "QPSK_3/5",
+                        "QPSK_2/3": "QPSK_2/3",
+                        "QPSK_3/4": "QPSK_3/4",
+                        "QPSK_4/5": "QPSK_4/5",
+                        "QPSK_5/6": "QPSK_5/6",
+                        "QPSK_8/9": "QPSK_8/9",
+                        "QPSK_9/10": "QPSK_9/10",
+                        "8PSK_3/5": "8PSK_3/5",
+                        "8PSK_2/3": "8PSK_2/3",
+                        "8PSK_3/4": "8PSK_3/4",
+                        "8PSK_5/6": "8PSK_5/6",
+                        "8PSK_8/9": "8PSK_8/9",
+                        "8PSK_9/10": "8PSK_9/10",
+                        "16APSK_2/3": "16APSK_2/3",
+                        "16APSK_3/4": "16APSK_3/4",
+                        "16APSK_4/5": "16APSK_4/5",
+                        "16APSK_5/6": "16APSK_5/6",
+                        "16APSK_8/9": "16APSK_8/9",
+                        "16APSK_9/10": "16APSK_9/10",
+                        "32APSK_3/4": "32APSK_3/4",
+                        "32APSK_4/5": "32APSK_4/5",
+                        "32APSK_5/6": "32APSK_5/6",
+                        "32APSK_8/9": "32APSK_8/9",
+                        "32APSK_9/10": "32APSK_9/10"
+                    }
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "latitude_variance",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "double precision",
+                    "unit": "°",
+                    "range_start": "0",
+                    "range_end": "90",
+                    "step": "0.1",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": []
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "polarization_skew",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "double precision",
+                    "unit": "°",
+                    "range_start": "-90",
+                    "range_end": "90",
+                    "step": "0.1",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": []
+                }
+            ]
+        }
+    },
+    "field_details": {
+        "pwmEnabled": false,
+        "type": "PWM",
+        "ranges": [
+            {
+                "description": "Not in Pointing mode, hardware problem, or off satellite",
+                "range": "0.0 - 0.1"
+            },
+            {
+                "description": "Detecting RF energy, but not locked on the downstream carrier",
+                "range": "0.2 - 9.9"
+            },
+            {
+                "description": "Locked on the downstream carrier",
+                "range": "10 - 20"
+            }
+        ]
+    }
+}

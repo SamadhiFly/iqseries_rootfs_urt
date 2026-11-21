@@ -1,0 +1,41 @@
+# Default settings for the iDirect Universal Remote Terminal init script.
+# This file is sourced by /bin/sh from /etc/init.d/urt.
+
+# Start the processes in Velocity mode without System Manager.
+#
+# NOTE: By default the init script starts sysmngr, which starts everything
+# else through PCD. However for debugging purposes that is often not ideal
+# because sysmngr restarts processes if they fail, and even reboots the
+# terminal if it encounters too many failures. You can override this behavior
+# and make it start specific processes outside of sysmngr, or none at all, by
+# setting the START_DAEMONS variable.
+#
+#START_DAEMONS="/usr/bin/redis-server /usr/sbin/griffin /usr/sbin/sabine /usr/sbin/gargoyle /usr/sbin/paddymanager /usr/sbin/velo_mobility"
+#DAEMONIZE_DAEMONS="redis-server griffin sabine velo_mobility"
+#STOP_DAEMONS="sysmngr pcd redis-server velo_mobility paddymanager paddy gargoyle sabine griffin"
+
+# Start the processes in Evolution mode without System Manager.
+#
+# NOTE: The processes themselves do not determine whether the remote is in
+# "Evolution mode" or "Velocity mode". The options files do that. However if
+# you have /sysopt/config/sat_router/falcon.opt installed on your remote rather
+# than /sysopt/config/sat_router/falcon.json, you may want to start the set of
+# processes for Evolution, which is more-or-less the same as the ones for
+# Velocity, but without Velocity Mobility or Gargoyle.
+#
+#START_DAEMONS="/usr/bin/redis-server /usr/sbin/griffin /usr/sbin/sabine /usr/sbin/paddymanager"
+#DAEMONIZE_DAEMONS="redis-server griffin sabine"
+#STOP_DAEMONS="sysmngr pcd redis-server paddymanager paddy sabine griffin"
+
+# Enable extra debug info in PCD.
+#
+# NOTE: Sometimes it is helpful to enable extra debug information in PCD to
+# understand why it is restarting processes. To do so you need to add the
+# "-v" and "-debug" flags to the PCD command line. You will also need to make
+# sure that PCD *is not* in the list of daemons to daemonize, or it will be
+# detached from the console and you will never see the extra debug messages
+# that it prints.
+#
+#START_DAEMONS="/usr/bin/redis-server /usr/sbin/pcd"
+#DAEMONIZE_DAEMONS="redis-server"
+#PCD_ARGS="-f /etc/idirect/rules.pcd -v -debug"

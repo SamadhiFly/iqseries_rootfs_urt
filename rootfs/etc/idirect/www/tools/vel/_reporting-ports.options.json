@@ -1,0 +1,425 @@
+{
+    "POST": {
+        "parameters": {
+            "comp_attr_metadata_array": [],
+            "attr_metadata_array": [
+                {
+                    "default_value": "",
+                    "attr_name": "1_mac_address",
+                    "attr_display_name": "mac_address",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "read_only":1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                      "terminal/config/identity",
+                      "data",
+                      "mac"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "1_vlans",
+                    "attr_display_name": "vlans",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "read_only": 1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/ip/ports",
+                        "data",
+                        "0",
+                        "tagged_vlans"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "1_untagged_vlan",
+                    "attr_display_name": "untagged_vlan",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "read_only": 1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/ip/ports",
+                        "data",
+                        "0",
+                        "untagged_vlan"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "1_status",
+                    "attr_display_name": "status",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "read_only":1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/ip/ports",
+                        "data",
+                        "0",
+                        "status"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "1_speed",
+                    "attr_display_name": "speed",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "MBit/s",
+                    "max_length": 0,
+                    "read_only": 1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/ip/ports",
+                        "data",
+                        "0",
+                        "speed"
+                    ],
+                    "field_details": {
+                        "chart_options": {
+                          "resource":"terminal/ip/ports",
+                          "respath": ["0"],
+                          "field":"speed",
+                          "type":"popover",
+                          "unit":"",
+                          "buffer": false,
+                          "maxpoints": 150,
+                          "resolutionbuffer": 30000,
+                          "resolutionlive": 5000,
+                          "streaminginterval": 15000,
+                          "tooltipoptions": {
+                            "title":"Speed",
+                            "placement":"left"
+                          }
+                        }
+                    }
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "1_bytes_tx",
+                    "attr_display_name": "data_sent",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "Bytes",
+                    "max_length": 0,
+                    "read_only": 1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/ip/ports/0/stats",
+                        "data",
+                        "0",
+                        "tx_stats",
+                        "bytes"
+                    ],
+                    "field_details": {
+                        "chart_options": {
+                          "resource":"terminal/ip/ports/0/stats",
+                          "respath": ["0","tx_stats"],
+                          "field":"bytes",
+                          "type":"popover",
+                          "unit":"",
+                          "buffer": false,
+                          "maxpoints": 150,
+                          "resolutionbuffer": 30000,
+                          "resolutionlive": 5000,
+                          "streaminginterval": 15000,
+                          "tooltipoptions": {
+                            "title":"Bytes",
+                            "placement":"left"
+                          }
+                        }
+                    }
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "1_frames_tx",
+                    "attr_display_name": "sent_frames",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "Frames",
+                    "max_length": 0,
+                    "read_only": 1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/ip/ports/0/stats",
+                        "data",
+                        "0",
+                        "tx_stats",
+                        "frames"
+                    ],
+                    "field_details": {
+                        "chart_options": {
+                          "resource":"terminal/ip/ports/0/stats",
+                          "respath": ["0","tx_stats"],
+                          "field":"frames",
+                          "type":"popover",
+                          "unit":"",
+                          "buffer": false,
+                          "maxpoints": 150,
+                          "resolutionbuffer": 30000,
+                          "resolutionlive": 5000,
+                          "streaminginterval": 15000,
+                          "tooltipoptions": {
+                            "title":"Frames",
+                            "placement":"left"
+                          }
+                        }
+                    }
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "1_dropped_frames_tx",
+                    "attr_display_name": "dropped_frames",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "Frames",
+                    "max_length": 0,
+                    "read_only": 1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/ip/ports/0/stats",
+                        "data",
+                        "0",
+                        "tx_stats",
+                        "dropped_frames"
+                    ],
+                    "field_details": {
+                        "chart_options": {
+                          "resource":"terminal/ip/ports/0/stats",
+                          "respath": ["0","tx_stats"],
+                          "field":"dropped_frames",
+                          "type":"popover",
+                          "unit":"",
+                          "buffer": false,
+                          "maxpoints": 150,
+                          "resolutionbuffer": 30000,
+                          "resolutionlive": 5000,
+                          "streaminginterval": 15000,
+                          "tooltipoptions": {
+                            "title":"Dropped Frames",
+                            "placement":"left"
+                          }
+                        }
+                    }
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "1_error_frames_tx",
+                    "attr_display_name": "error_frames",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "Frames",
+                    "max_length": 0,
+                    "read_only": 1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/ip/ports/0/stats",
+                        "data",
+                        "0",
+                        "tx_stats",
+                        "error_frames"
+                    ],
+                    "field_details": {
+                        "chart_options": {
+                          "resource":"terminal/ip/ports/0/stats",
+                          "respath": ["0","tx_stats"],
+                          "field":"error_frames",
+                          "type":"popover",
+                          "unit":"",
+                          "buffer": false,
+                          "maxpoints": 150,
+                          "resolutionbuffer": 30000,
+                          "resolutionlive": 5000,
+                          "streaminginterval": 15000,
+                          "tooltipoptions": {
+                            "title":"Error Frames",
+                            "placement":"left"
+                          }
+                        }
+                    }
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "1_bytes_rx",
+                    "attr_display_name": "data_received",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "Bytes",
+                    "max_length": 0,
+                    "read_only": 1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/ip/ports/0/stats",
+                        "data",
+                        "0",
+                        "rx_stats",
+                        "bytes"
+                    ],
+                    "field_details": {
+                        "chart_options": {
+                          "resource":"terminal/ip/ports/0/stats",
+                          "respath": ["0","rx_stats"],
+                          "field":"bytes",
+                          "type":"popover",
+                          "unit":"",
+                          "buffer": false,
+                          "maxpoints": 150,
+                          "resolutionbuffer": 30000,
+                          "resolutionlive": 5000,
+                          "streaminginterval": 15000,
+                          "tooltipoptions": {
+                            "title":"Bytes",
+                            "placement":"left"
+                          }
+                        }
+                    }
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "1_frames_rx",
+                    "attr_display_name": "received_frames",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "Frames",
+                    "max_length": 0,
+                    "read_only": 1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/ip/ports/0/stats",
+                        "data",
+                        "0",
+                        "rx_stats",
+                        "frames"
+                    ],
+                    "field_details": {
+                        "chart_options": {
+                          "resource":"terminal/ip/ports/0/stats",
+                          "respath": ["0","rx_stats"],
+                          "field":"frames",
+                          "type":"popover",
+                          "unit":"",
+                          "buffer": false,
+                          "maxpoints": 150,
+                          "resolutionbuffer": 30000,
+                          "resolutionlive": 5000,
+                          "streaminginterval": 15000,
+                          "tooltipoptions": {
+                            "title":"Frames",
+                            "placement":"left"
+                          }
+                        }
+                    }
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "1_dropped_frames_rx",
+                    "attr_display_name": "dropped_frames",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "Frames",
+                    "max_length": 0,
+                    "read_only": 1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/ip/ports/0/stats",
+                        "data",
+                        "0",
+                        "rx_stats",
+                        "dropped_frames"
+                    ],
+                    "field_details": {
+                        "chart_options": {
+                          "resource":"terminal/ip/ports/0/stats",
+                          "respath": ["0","rx_stats"],
+                          "field":"dropped_frames",
+                          "type":"popover",
+                          "unit":"",
+                          "buffer": false,
+                          "maxpoints": 150,
+                          "resolutionbuffer": 30000,
+                          "resolutionlive": 5000,
+                          "streaminginterval": 15000,
+                          "tooltipoptions": {
+                            "title":"Dropped Frames",
+                            "placement":"left"
+                          }
+                        }
+                    }
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "1_error_frames_rx",
+                    "attr_display_name": "error_frames",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "Frames",
+                    "max_length": 0,
+                    "read_only": 1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/ip/ports/0/stats",
+                        "data",
+                        "0",
+                        "rx_stats",
+                        "error_frames"
+                    ],
+                    "field_details": {
+                        "chart_options": {
+                          "resource":"terminal/ip/ports/0/stats",
+                          "respath": ["0","rx_stats"],
+                          "field":"error_frames",
+                          "type":"popover",
+                          "unit":"",
+                          "buffer": false,
+                          "maxpoints": 150,
+                          "resolutionbuffer": 30000,
+                          "resolutionlive": 5000,
+                          "streaminginterval": 15000,
+                          "tooltipoptions": {
+                            "title":"Error Frames",
+                            "placement":"left"
+                          }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

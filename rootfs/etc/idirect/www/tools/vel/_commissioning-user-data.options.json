@@ -1,0 +1,49 @@
+{
+  "POST": {
+    "parameters": {
+      "comp_attr_metadata_array": [],
+      "attr_metadata_array": [{
+        "default_value": "0",
+        "attr_name": "p1db",
+        "hide_on_GUI": false,
+        "attr_required": 1,
+        "attr_type": "float",
+        "unit": "dBm",
+        "step": "0.1",
+        "max_length": 0,
+        "range_start": -35,
+        "range_end": 5,
+        "dependencies": "",
+        "option_list": []
+      }, {
+        "default_value": "0",
+        "attr_name": "max_tx_power",
+        "hide_on_GUI": false,
+        "attr_required": 1,
+        "attr_type": "float",
+        "unit": "dBm",
+        "step": "0.1",
+        "range_start": -35,
+        "range_end": 5,
+        "max_length": 0,
+
+        "dependencies": "",
+        "option_list": []
+      }, {
+        "default_value": "0",
+        "attr_name": "buc_rated_power",
+        "hide_on_GUI": false,
+        "attr_required": 1,
+        "read_only": 1,
+        "attr_type": "float",
+        "unit": "dBm",
+        "step": "0.1",
+        "max_length": 0,
+        "range_start": -15,
+        "range_end": 48.5,
+        "dependencies": "",
+        "option_list": []
+      }]
+    }
+  }
+}

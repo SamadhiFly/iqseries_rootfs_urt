@@ -1,0 +1,506 @@
+{
+    "POST": {
+        "parameters": {
+            "comp_attr_metadata_array": [],
+            "attr_metadata_array": [
+                {
+                    "default_value": "",
+                    "attr_name": "mode",
+                    "attr_display_name": "mode",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "read_only":1,
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/commission",
+                        "data",
+                        "available_bands",
+                        "0",
+                        "tx",
+                        "0",
+                        "mode"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "tx_if_frequency",
+                    "attr_display_name": "if_frequency",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "MHz",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "read_only":1,
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/commission",
+                        "data",
+                        "available_bands",
+                        "0",
+                        "tx",
+                        "0",
+                        "if_frequency"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "tx_rf_frequency",
+                    "attr_display_name": "rf_frequency",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "MHz",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "read_only":1,
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/commission",
+                        "data",
+                        "available_bands",
+                        "0",
+                        "tx",
+                        "0",
+                        "rf_frequency"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "tx_symbol_rate",
+                    "attr_display_name": "symbol_rate",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "Ksps",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "read_only":1,
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/commission",
+                        "data",
+                        "available_bands",
+                        "0",
+                        "tx",
+                        "0",
+                        "symbol_rate"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "rx_if_frequency",
+                    "attr_display_name": "if_frequency",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "MHz",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "read_only":1,
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/commission",
+                        "data",
+                        "available_bands",
+                        "0",
+                        "rx",
+                        "0",
+                        "if_frequency"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "rx_rf_frequency",
+                    "attr_display_name": "rf_frequency",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "MHz",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "read_only":1,
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/commission",
+                        "data",
+                        "available_bands",
+                        "0",
+                        "rx",
+                        "0",
+                        "rf_frequency"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "rx_symbol_rate",
+                    "attr_display_name": "symbol_rate",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "Ksps",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "read_only":1,
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/commission",
+                        "data",
+                        "available_bands",
+                        "0",
+                        "rx",
+                        "0",
+                        "symbol_rate"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "mode_1",
+                    "attr_display_name": "mode",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "read_only":1,
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/commission",
+                        "data",
+                        "available_bands",
+                        "0",
+                        "tx",
+                        "1",
+                        "mode"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "tx_1_if_frequency",
+                    "attr_display_name": "if_frequency",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "MHz",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "read_only":1,
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/commission",
+                        "data",
+                        "available_bands",
+                        "0",
+                        "tx",
+                        "1",
+                        "if_frequency"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "tx_1_rf_frequency",
+                    "attr_display_name": "rf_frequency",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "MHz",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "read_only":1,
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/commission",
+                        "data",
+                        "available_bands",
+                        "0",
+                        "tx",
+                        "1",
+                        "rf_frequency"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "tx_1_symbol_rate",
+                    "attr_display_name": "symbol_rate",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "Ksps",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "read_only":1,
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/commission",
+                        "data",
+                        "available_bands",
+                        "0",
+                        "tx",
+                        "1",
+                        "symbol_rate"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "rx_1_if_frequency",
+                    "attr_display_name": "if_frequency",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "MHz",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "read_only":1,
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/commission",
+                        "data",
+                        "available_bands",
+                        "0",
+                        "rx",
+                        "1",
+                        "if_frequency"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "rx_1_rf_frequency",
+                    "attr_display_name": "rf_frequency",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "MHz",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "read_only":1,
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/commission",
+                        "data",
+                        "available_bands",
+                        "0",
+                        "rx",
+                        "1",
+                        "rf_frequency"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "rx_1_symbol_rate",
+                    "attr_display_name": "symbol_rate",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "Ksps",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "read_only":1,
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/commission",
+                        "data",
+                        "available_bands",
+                        "0",
+                        "rx",
+                        "1",
+                        "symbol_rate"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "p1db",
+                    "attr_display_name": "p1db",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "dBm",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "read_only":1,
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/commission",
+                        "data",
+                        "available_bands",
+                        "0",
+                        "installer_record",
+                        "if_p1dB"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "max_tx_power",
+                    "attr_display_name": "max_tx_power",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "dBm",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "read_only":1,
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/commission",
+                        "data",
+                        "available_bands",
+                        "0",
+                        "installer_record",
+                        "if_max_tx_power"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "buc_rated_power",
+                    "attr_display_name": "buc_rated_power",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "dBm",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "read_only":1,
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/commission",
+                        "data",
+                        "available_bands",
+                        "0",
+                        "installer_record",
+                        "rf_buc_rated_power"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "start_rf_frequency",
+                    "attr_display_name": "start_frequency",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "MHz",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "read_only":1,
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/commission",
+                        "data",
+                        "available_bands",
+                        "0",
+                        "installer_record",
+                        "start_rf_frequency"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "stop_rf_frequency",
+                    "attr_display_name": "stop_frequency",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "MHz",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "read_only":1,
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/commission",
+                        "data",
+                        "available_bands",
+                        "0",
+                        "installer_record",
+                        "stop_rf_frequency"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "time",
+                    "attr_display_name": "time",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "read_only":1,
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/commission",
+                        "data",
+                        "available_bands",
+                        "0",
+                        "location",
+                        "time"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "latitude",
+                    "attr_display_name": "latitude",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "°",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "read_only":1,
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/commission",
+                        "data",
+                        "available_bands",
+                        "0",
+                        "location",
+                        "latitude"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "longitude",
+                    "attr_display_name": "longitude",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "°",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "read_only":1,
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/commission",
+                        "data",
+                        "available_bands",
+                        "0",
+                        "location",
+                        "longitude"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "altitude",
+                    "attr_display_name": "altitude",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "m",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "read_only":1,
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/commission",
+                        "data",
+                        "available_bands",
+                        "0",
+                        "location",
+                        "altitude"
+                    ]
+                }
+            ]
+        }
+    }
+}

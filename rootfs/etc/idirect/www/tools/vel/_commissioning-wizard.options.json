@@ -1,0 +1,132 @@
+{
+    "1": {
+        "name": "angle-calculator",
+        "status": "active",
+        "text": "have_you_calculated_the_pointing_angle",
+        "text_done": "pointing_angle_successfully_calculated",
+        "buttons": [
+            {
+                "url": "",
+                "name": "yes",
+                "done": true,
+                "cancel": "",
+                "tooltip": ""
+            },
+            {
+                "url": "angle-calculator",
+                "name": "no",
+                "done": "",
+                "cancel": "",
+                "tooltip": ""
+            },
+            {
+                "url": "commissioning-wizard",
+                "name": "cancel_and_return_to_wizard",
+                "done": "",
+                "cancel": true,
+                "tooltip": ""
+            },
+            {
+                "url": "commissioning-wizard",
+                "name": "continue_to_wizard",
+                "done": true,
+                "cancel": "",
+                "tooltip": ""
+            }
+        ]
+    },
+    "2": {
+        "name": "tx-cable",
+        "status": "upcoming",
+        "text": "is_the_tx_cable_removed_from_the_buc",
+        "text_done": "tx_cable_successfully_removed",
+        "buttons": [
+            {
+                "url": "",
+                "name": "yes",
+                "done": true,
+                "cancel": "",
+                "tooltip": ""
+            },
+            {
+                "url": "",
+                "name": "no",
+                "done": "",
+                "cancel": "",
+                "tooltip": "remove_tx_cable_from_the_buc"
+            }
+        ]
+    },
+    "3": {
+        "name": "antenna-pointing",
+        "status": "upcoming",
+        "text": "is_the_antenna_locked_on_to_the_downstream_carrier",
+        "text_done": "antenna_successfully_locked_on_to_the_downstream_carrier",
+        "buttons": [
+            {
+                "url": "",
+                "name": "yes",
+                "done": true,
+                "cancel": "",
+                "tooltip": ""
+            },
+            {
+                "url": "antenna-pointing",
+                "name": "no",
+                "done": "",
+                "cancel": "",
+                "tooltip": ""
+            },
+            {
+                "url": "commissioning-wizard",
+                "name": "cancel_and_return_to_wizard",
+                "done": "",
+                "cancel": true,
+                "tooltip": ""
+            },
+            {
+                "url": "commissioning-wizard",
+                "name": "continue_to_wizard",
+                "done": true,
+                "cancel": "",
+                "tooltip": ""
+            }
+        ]
+    },
+    "4": {
+        "name": "cross-polarization",
+        "status": "upcoming",
+        "text": "have_you_completed_the_cross_polarization_test",
+        "text_done": "cross_polarization_test_successfully_completed",
+        "buttons": [
+            {
+                "url": "",
+                "name": "yes",
+                "done": true,
+                "cancel": "",
+                "tooltip": ""
+            },
+            {
+                "url": "cross-polarization",
+                "name": "no",
+                "done": "",
+                "cancel": "",
+                "tooltip": ""
+            },
+            {
+                "url": "commissioning-wizard",
+                "name": "cancel_and_return_to_wizard",
+                "done": "",
+                "cancel": true,
+                "tooltip": ""
+            },
+            {
+                "url": "commissioning-wizard",
+                "name": "continue_to_wizard",
+                "done": true,
+                "cancel": "",
+                "tooltip": ""
+            }
+        ]
+    }
+}

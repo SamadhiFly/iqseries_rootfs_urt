@@ -1,0 +1,87 @@
+{
+   "SECURITY": {
+      "password": "$idi3$0O/qVf$/39m6WM.gDPldSOE0mH1TR146rpPRY/jyinpsmSOA7kBk9PhKO2BpjBMtz8QSqd8AwdLoXEvLeAOV6bFDUzTNP",
+      "os_password": "$1$.mLSEZ$2cF.lDT3bVfq1bOTd5Rc11",
+      "admin_password": "$idi3$/ayqdC$0KCgWmVIyNDqlTyQaOeEwyknlYtrskTA2AnQ/xPPDbhC/sHnMa0cL8jxlw51OvgYSOzR4XCi4U.ZAaavqzCD8/"
+   },
+   "TERMINAL":{
+      "id":1,
+      "model_type": "iQDesktop",
+      "sn":"1",
+      "access_class":7829503,
+      "min_look_angle":0.0 // in degrees
+   },
+   "MOBILITY":{
+      "type":"maritime",
+      "rf_term_type":3, 
+      "INSTALLATION":{
+         "MODEM":{
+            "remote_lat":0.0,
+            "remote_long":0.0
+         }        
+      }
+   },
+   "ODU":{
+      "LNB":[
+         {
+            "rx_id":0,
+            "lnb_dc_voltage":19,
+            "lnb_tone_enable":0,
+            "odu_rx_10_mhz_enable":0,
+            "odu_rx_dc_power_enable":0,
+            "lo_freq": 18300.0 //In MHz.
+         },
+         {
+            "rx_id":1,
+            "lnb_dc_voltage":19,
+            "lnb_tone_enable":0,
+            "odu_rx_10_mhz_enable":0,
+            "odu_rx_dc_power_enable":0,
+            "lo_freq": 18300.0 //In MHz.
+         }
+      ],
+      "BUC":{
+            "odu_tx_reference_clock":50,
+            "odu_tx_dc_power_enable":0,
+            "odu_tx_ifl_en_enable":0,
+            "lo_freq": 18300.0 //In MHz. 
+      }
+   },
+   "EXT_INTF":{
+
+      "BUC_INTF":{
+            "enable":1,
+            "mode":"emulate",  
+            "baud_rate":38400,
+            "device":"ttyS1"
+       },
+      "BIM":{
+            "enable":1,
+            "max_phy_count":5,
+            "version":2,
+            "security_name":"public",
+            "security_level":1,
+            "auth_protocol":"md5",
+            "auth_passphrase":"BIMTerminalAuth",
+            "priv_protocol":"des",
+            "priv_passphrase":"BIMTerminalPrivacy",
+            "security_engine_id":"0x800000020109840301",
+            "context_name":"iDirectCM",
+            "context_engine_id":"0x800000020109840301",
+            "security_model":"usm",
+            "heartbeat_timeout_cnt":5,
+            "stats_timer_sec":10,
+            "ip_addr":"INET;192.168.1.2;0" 
+      },
+      "AIM":{
+            "enable":1,
+            "mode":"tcp",
+            "ip_addr":"INET;192.168.1.3;5001"            
+      }
+  },
+  "NMS":{
+      "type":"TERMINAL_OPT",
+      "version":"NMS-Pulse-0.1",
+      "generated_by":"NMS-Pulse-0.1"
+  }
+}

@@ -1,0 +1,12 @@
+ComponentVersion=3.5.2.1-12131
+Tag=Official Build
+User=jenkins
+Host=
+DateTime=Fri Dec  8 11:29:31 UTC 2023
+GitBranch=release/vel-3.5
+GitHash=b5a29574adfb5a47c941f62343811b4f81b266ad
+LocalMods=No
+Platform=sidu
+CompilerVersion=mips-mti-linux-gnu-g++ (Codescape GNU Tools 2015.10-04 for MIPS MTI Linux) 4.9.2
+KernelVersion=3.10.0-1160.66.1.el7.x86_64 #1 SMP Wed Apr 27 20:34:34 UTC 2022 x86_64
+Comment=

@@ -1,0 +1,148 @@
+[
+    {
+        "title": "dashboard",
+        "url": "/#/dashboard",
+        "children": []
+    },
+    {
+        "title": "details",
+        "url": "",
+        "children": [
+            {
+                "title": "satellite_interface",
+                "url": "",
+                "children": [
+                    {
+                        "title": "reporting_configuration",
+                        "url": "/#/satellite-interface",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "title": "terminal_device",
+                "url": "",
+                "children": [
+                    {
+                        "title": "reporting_configuration",
+                        "url": "/#/remote-device",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "title": "lan_interface",
+                "url": "",
+                "children": [
+                    {
+                        "title": "reporting_ports",
+                        "url": "/#/reporting-ports",
+                        "children": []
+                    },
+                    {
+                        "title": "ip_configuration_vlans",
+                        "url": "/#/ip-vlan-configuration",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "title": "external_equipment",
+                "url": "",
+                "children": [
+                    {
+                        "title": "antenna",
+                        "url": "/#/antenna",
+                        "children": []
+                    },
+                    {
+                        "title": "buc",
+                        "url": "/#/buc",
+                        "children": []
+                    },
+                    {
+                        "title": "lnb",
+                        "url": "/#/lnb",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "commissioning",
+        "url": "",
+        "admin_only": "true",
+        "children": [
+            {
+                "title": "commissioning",
+                "url": "",
+                "children": [
+                    {
+                        "title": "commissioning_wizard",
+                        "url": "/#/commissioning-wizard",
+                        "children": []
+                    },
+                    {
+                        "title": "commissioning_details",
+                        "url": "/#/commissioning-details",
+                        "children": []
+                    },
+                    {
+                        "title": "one_touch_commissioning",
+                        "url": "/#/one-touch-calibration",
+                        "children": []
+                    },
+                    {
+                        "title": "angle_calculator",
+                        "url": "/#/angle-calculator",
+                        "children": []
+                    },
+                    {
+                        "title": "antenna_pointing",
+                        "url": "/#/antenna-pointing",
+                        "children": []
+                    },
+                    {
+                        "title": "cross_polarization_p1db",
+                        "url": "/#/cross-polarization",
+                        "children": []
+                    },
+                    {
+                        "title": "bim_configuration",
+                        "url": "/#/bim-configuration",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "administration",
+        "url": "",
+        "admin_only": "true",
+        "children": [
+            {
+                "title": "administration",
+                "url": "",
+                "children": [
+                    {
+                        "title": "software_and_configuration",
+                        "url": "/#/software_and_configuration",
+                        "children": []
+                    },
+                    {
+                        "title": "external_equipment",
+                        "url": "/#/external-equipment",
+                        "children": []
+                    },
+                    {
+                        "title": "authentication",
+                        "url": "/#/one-time-token",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    }
+]

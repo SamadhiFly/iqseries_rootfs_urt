@@ -1,0 +1,249 @@
+{
+    "POST": {
+        "parameters": {
+            "attr_metadata_array": [
+                {
+                    "default_value": "",
+                    "attr_name": "interval",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "float",
+                    "step": "1",
+                    "unit": "sec",
+                    "range_end": "30",
+                    "range_start": "1",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/ip/mpe",
+                        "data",
+                        "interval"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "activity_threshold",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "float",
+                    "step": "100",
+                    "unit": "packets/ interval",
+                    "range_end": "100000",
+                    "range_start": "1",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/ip/mpe",
+                        "data",
+                        "activity_threshold"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "inactivity_threshold",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "float",
+                    "step": "100",
+                    "unit": "packets/ interval",
+                    "range_end": "100000",
+                    "range_start": "1",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/ip/mpe",
+                        "data",
+                        "inactivity_threshold"
+                    ]
+                }
+            ],
+            "comp_attr_metadata_array": [
+                {
+                    "comp_attr_type": "overview",
+                    "is_unique": false,
+                    "dependencies": "",
+                    "comp_attr_required": 0,
+                    "comp_attr_id": 412034,
+                    "min_length": 0,
+                    "comp_attr_display_name": "",
+                    "default_value": "",
+                    "comp_attr_name": "overview",
+                    "hide_on_GUI": false,
+                    "max_length": 0,
+                    "attr_metadata_array": [
+                        {
+                            "dependencies": "",
+                            "furtherinfo": "",
+                            "min_length": 0,
+                            "read_only": 0,
+                            "default_value": "",
+                            "attr_name": "pid_number",
+                            "attr_required": 0,
+                            "attr_display_name": "pid_number",
+                            "option_list": {},
+                            "range_end": "",
+                            "attr_type": "text",
+                            "furtherinfolink": "",
+                            "unit": "",
+                            "range_start": "",
+                            "format": "",
+                            "attr_id": 1,
+                            "keyname": "",
+                            "max_length": 0
+                        }
+                    ]
+                },
+                {
+                    "comp_attr_type": "",
+                    "is_unique": false,
+                    "dependencies": "",
+                    "comp_attr_required": 0,
+                    "comp_attr_id": 412034,
+                    "min_length": 0,
+                    "comp_attr_display_name": "",
+                    "default_value": "abc",
+                    "comp_attr_name": "overview_2",
+                    "hide_on_GUI": false,
+                    "max_length": 0,
+                    "attr_metadata_array": [
+                        {
+                            "dependencies": "",
+                            "furtherinfo": "",
+                            "min_length": 0,
+                            "read_only": 0,
+                            "default_value": "",
+                            "attr_name": "pid_number_2",
+                            "attr_required": 0,
+                            "attr_display_name": "pid_number",
+                            "option_list": {},
+                            "range_end": "",
+                            "attr_type": "text",
+                            "furtherinfolink": "",
+                            "unit": "",
+                            "range_start": "",
+                            "format": "",
+                            "attr_id": 1,
+                            "keyname": "",
+                            "max_length": 0
+                        }
+                    ]
+                },
+                {
+                    "comp_attr_type": "multicast_routing_metrics",
+                    "is_unique": false,
+                    "read_only": 1,
+                    "dependencies": "",
+                    "comp_attr_required": 0,
+                    "comp_attr_id": 412034,
+                    "min_length": 0,
+                    "comp_attr_display_name": "",
+                    "default_value": "",
+                    "comp_attr_name": "multicast_routing_metrics_rx1",
+                    "hide_on_GUI": false,
+                    "max_length": 0,
+                    "attr_metadata_array": [
+                        {
+                            "dependencies": "",
+                            "furtherinfo": "",
+                            "min_length": 0,
+                            "read_only": 1,
+                            "default_value": "",
+                            "attr_name": "destination_ip",
+                            "attr_required": 0,
+                            "attr_display_name": "destination_ip",
+                            "option_list": {},
+                            "range_end": "",
+                            "attr_type": "text",
+                            "furtherinfolink": "",
+                            "unit": "",
+                            "range_start": "",
+                            "format": "",
+                            "attr_id": 1,
+                            "keyname": "",
+                            "max_length": 0
+                        },
+                        {
+                            "dependencies": "",
+                            "furtherinfo": "",
+                            "min_length": 0,
+                            "read_only": 1,
+                            "default_value": "",
+                            "attr_name": "number_of_packets_per_interval",
+                            "attr_required": 0,
+                            "attr_display_name": "number_of_packets_per_interval",
+                            "option_list": {},
+                            "range_end": "",
+                            "attr_type": "text",
+                            "furtherinfolink": "",
+                            "unit": "",
+                            "range_start": "",
+                            "format": "",
+                            "attr_id": 1,
+                            "keyname": "",
+                            "max_length": 0
+                        }
+                    ]
+                },
+                {
+                    "comp_attr_type": "multicast_routing_metrics",
+                    "is_unique": false,
+                    "read_only": 1,
+                    "dependencies": "",
+                    "comp_attr_required": 0,
+                    "comp_attr_id": 412034,
+                    "min_length": 0,
+                    "comp_attr_display_name": "",
+                    "default_value": "",
+                    "comp_attr_name": "multicast_routing_metrics_rx2",
+                    "hide_on_GUI": false,
+                    "max_length": 0,
+                    "attr_metadata_array": [
+                        {
+                            "dependencies": "",
+                            "furtherinfo": "",
+                            "min_length": 0,
+                            "read_only": 1,
+                            "default_value": "",
+                            "attr_name": "destination_ip",
+                            "attr_required": 0,
+                            "attr_display_name": "destination_ip",
+                            "option_list": {},
+                            "range_end": "",
+                            "attr_type": "text",
+                            "furtherinfolink": "",
+                            "unit": "",
+                            "range_start": "",
+                            "format": "",
+                            "attr_id": 1,
+                            "keyname": "",
+                            "max_length": 0
+                        },
+                        {
+                            "dependencies": "",
+                            "furtherinfo": "",
+                            "min_length": 0,
+                            "read_only": 1,
+                            "default_value": "",
+                            "attr_name": "number_of_packets_per_interval",
+                            "attr_required": 0,
+                            "attr_display_name": "number_of_packets_per_interval",
+                            "option_list": {},
+                            "range_end": "",
+                            "attr_type": "text",
+                            "furtherinfolink": "",
+                            "unit": "",
+                            "range_start": "",
+                            "format": "",
+                            "attr_id": 1,
+                            "keyname": "",
+                            "max_length": 0
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

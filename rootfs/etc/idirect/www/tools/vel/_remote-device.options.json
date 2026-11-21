@@ -1,0 +1,250 @@
+{
+    "POST": {
+        "parameters": {
+            "comp_attr_metadata_array": [],
+            "attr_metadata_array": [
+                {
+                    "default_value": "",
+                    "attr_name": "model_type",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "read_only": 1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/identity",
+                        "data",
+                        "model"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "cpu_load",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "%",
+                    "read_only": 1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/device/performance",
+                        "data",
+                        "cpu_load"
+                    ],
+                    "field_details": {
+                        "chart_options": {
+                            "resource": "terminal/device/performance",
+                            "field": "cpu_load",
+                            "type": "popover",
+                            "unit": "%",
+                            "min": 0,
+                            "max": 100,
+                            "buffer": true,
+                            "maxpoints": 150,
+                            "resolutionbuffer": 30000,
+                            "resolutionlive": 5000,
+                            "tooltipoptions": {
+                                "title": "CPU Load",
+                                "placement": "left"
+                            }
+                        }
+                    }
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "memory_use",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "%",
+                    "read_only": 1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/device/performance",
+                        "data",
+                        "memory"
+                    ],
+                    "field_details": {
+                        "chart_options": {
+                            "resource": "terminal/device/performance",
+                            "field": "memory",
+                            "type": "popover",
+                            "unit": "%",
+                            "min": 0,
+                            "max": 100,
+                            "buffer": true,
+                            "maxpoints": 150,
+                            "resolutionbuffer": 30000,
+                            "resolutionlive": 5000,
+                            "tooltipoptions": {
+                                "title": "Memory Use",
+                                "placement": "left"
+                            }
+                        }
+                    }
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "terminal_type",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "read_only": 1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/identity",
+                        "data",
+                        "openamip",
+                        "rftermtype"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "serial_number",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "read_only": 1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/identity",
+                        "data",
+                        "serial_number"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "software_version",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "read_only": 1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/identity",
+                        "",
+                        ""
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "tpk",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "read_only": 1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/identity",
+                        "data",
+                        "tpk"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "fan_status",
+                    "hide_on_GUI": true,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "read_only": 1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "",
+                        "",
+                        ""
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "temperature",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "°C",
+                    "read_only": 1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/device/temperature",
+                        "data",
+                        "overall_temp"
+                    ],
+                    "field_details": {
+                        "chart_options": {
+                            "resource": "terminal/device/temperature",
+                            "field": "overall_temp",
+                            "type": "popover",
+                            "unit": "°C",
+                            "min": 0,
+                            "buffer": true,
+                            "maxpoints": 150,
+                            "resolutionbuffer": 30000,
+                            "resolutionlive": 5000,
+                            "tooltipoptions": {
+                                "title": "Temperature",
+                                "placement": "left"
+                            }
+                        }
+                    }
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "longitude",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "°",
+                    "read_only": 1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/status/location/remote",
+                        "data",
+                        "longitude"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "latitude",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "read_only": 1,
+                    "attr_type": "text",
+                    "unit": "°",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/status/location/remote",
+                        "data",
+                        "latitude"
+                    ]
+                }
+            ]
+        }
+    }
+}

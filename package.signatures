@@ -1,0 +1,156 @@
+--IDIRECT_SIG_BEGIN--
+Name: common_10_128M
+Comment: Signature of file '/tmp/pkgTempDir.nfbq4qhnwp/common_10_128M.sha512'
+Type: IDIRECT_SIG_RSA_SHA512
+Signer: CN = iDirect_Corporate_Key_2006, C = US, ST = VA, O = iDirect, OU = CM
+0D3eLtjxVPKz/z4.KOy/nD3IMO7VSapU2IxG/x7n08wsJIAK/vi3zy9TqiJIwld.b419qtkDvxJLKh8
+SsWXyobj0rNUPm9A2p1Jyfueqt9QOVQf27QNAq1p5M/K4Dpzi2vFklmlFJitVVOmeCXuhngnW3Jnmjh
+EAl5RolXlf4TJ77I0HL8yTYFTuQEdi.l5o0ZY6ADl3YSReRF71In62pY.WSG61JzvF0Hv87.BE2F/v1
+197PB6p5YcMul2LBbeRpvdIHzCBoFsMn/uW5a2Bgkj/el9ltB8D1AI4jtncw1zPcsoe./Pc/qgGUPZ.
+7yMtABIIXyBssWriamePU7XrjT
+
+--IDIRECT_SIG_END--
+--IDIRECT_SIG_BEGIN--
+Name: install_file_map
+Comment: Signature of file '/tmp/pkgTempDir.nfbq4qhnwp/install_file_map.sha512'
+Type: IDIRECT_SIG_RSA_SHA512
+Signer: CN = iDirect_Corporate_Key_2006, C = US, ST = VA, O = iDirect, OU = CM
+/iHPzWZP5JejERrkeoiLA1V7EM5oQYuy/EKdfElPoTeVqgTXQrgY/jjXNcFmN0uCDZK0uGGUV2bsSQD
+t.6EZ1OcJlooC6tWNcEDPV2AEa13Aq2vYEVMbsi.PFIT9BQ6xlwo9Gse6sf7u4xiZdWQX8vgRhXiHwq
+BL2.IveJFy0ZJzfwSGGrvn7xq8uFG9IJXbaeDboCQ9I9hcEzcsfgbylYmXEwnwIn6MhARv4VlfiIxo8
+GwKwAZSbpAfMR3zsgbvOV.tKVtksgEq6buMdpDayCQJaThyjp1eyzfCtugKXrKxAOeGbJKoxDfzJU7o
+AwlutvKj7zB0qROHOdPvgFD7to
+
+--IDIRECT_SIG_END--
+--IDIRECT_SIG_BEGIN--
+Name: postinstall
+Comment: Signature of file '/tmp/pkgTempDir.nfbq4qhnwp/postinstall.sha512'
+Type: IDIRECT_SIG_RSA_SHA512
+Signer: CN = iDirect_Corporate_Key_2006, C = US, ST = VA, O = iDirect, OU = CM
+.hk/3MNARK.r03i.i7y1x.XQo6h./r3/MHTBd0ffGcl1LUnzqwAl81ud9Gac4usjaANiB/ujZlrLeqM
+mb6U.MhkgL5A/D9RtQqBsGZigtUj41EqJvizBhdDJePEvXaDIE0RbubPHxg36MDfrOm5aNivN0X3qkE
+AhYyGPcE/hlmaYmlidk2MYXDTaGXdSxOa4xXLYKScuHUOWY.Ndk.hLZ1iYQRFP5JDks3Wz4uW90dlu4
+4dMLrcqphlSXA1RtIxlV/RDHw/j.qR9S2YlV3MmuZmJDUgsYNr5Fe/VHVnBE./JMbFB2OHNiRfKDy7n
+iLRNAJ7G8Ykg9qifNfwpJQDGM1
+
+--IDIRECT_SIG_END--
+--IDIRECT_SIG_BEGIN--
+Name: package_summary.xml
+Comment: Signature of file '/tmp/pkgTempDir.nfbq4qhnwp/package_summary.xml.sha512'
+Type: IDIRECT_SIG_RSA_SHA512
+Signer: CN = iDirect_Corporate_Key_2006, C = US, ST = VA, O = iDirect, OU = CM
+/X1RUP2DHx5t.v4VHBQk89MGOEWFzkIwddUpyRmBEj/pptdjGq5fBxQz.OMgE2Dz17WgFGyue.RH4JB
+AjPQvzaDiF8d4kd.n97y4.QCn79xILJCK.ZusYJpoQ4cEjU2E5ReYlyKWZc9nr9V.Zt/i7VjqqW6YcA
+JmaDUCALYhEjKNCCGoYH.3YMxxqQJoNjk9IxvgpfjhbQCpYGWbQuAWdySTPl5MyiBO0dKVdiIehi5YM
+kBPJJwrFCZ5W4NPAtZoONY/j4WuOypRQCunWkiWloBYulJls0Drq8SrYljDv5bSYen5t/zems4Xatf5
+1jkGA1VFvQM3TYB.4/t8tlPs4G
+
+--IDIRECT_SIG_END--
+--IDIRECT_SIG_BEGIN--
+Name: idirect-release
+Comment: Signature of file '/tmp/pkgTempDir.nfbq4qhnwp/idirect-release.sha512'
+Type: IDIRECT_SIG_RSA_SHA512
+Signer: CN = iDirect_Corporate_Key_2006, C = US, ST = VA, O = iDirect, OU = CM
+1FywEyk0OHbfaj8eCtJA2CoQjcI80gA5z3JIa1TRJRgd3/10WxFteKCQHUBwQoiCt7eZR4cLbMl/g9h
+cc6jaIZA5uqzjPLsNeUDIn8RpqP8HHrWIbsLElSOYOIT8Rqs1p5PeA.lp4p/DXWDnlOL6Gd5Rwcy3hH
+wWxcQcELmrmPNyC7AfZWhUbco.9Vs/5z.NA2Ku5fpwa9ROYgUfhpwLLkK15fERhwqqbjejP2aZ9YFdA
+kcOjcOjnYZVjURWKk928.JdXE4xJdwGyz3FhWsJptO5cCJ5lxZrGKRT3j.hMYhvXPOHlDEFJCQEXlLo
+7yKGQ1uEWhnd0FEQj0psseR3Te
+
+--IDIRECT_SIG_END--
+--IDIRECT_SIG_BEGIN--
+Name: version
+Comment: Signature of file '/tmp/pkgTempDir.nfbq4qhnwp/version.sha512'
+Type: IDIRECT_SIG_RSA_SHA512
+Signer: CN = iDirect_Corporate_Key_2006, C = US, ST = VA, O = iDirect, OU = CM
+//YNYo.047AbC1TxzExMNQhdYBZE.P9nI0rUSm4y6.DMxHntSe5FGrAmyHxW4liGki7fY1BQtWxSFPI
+1eKICZKCrvwj83FL8tDq5HHXEO9cRRGlnlK6swv3VQq6AyceTyJVB58lKUnzlt5UnWWvebI5eh1XDSU
+WBXFWd9TuKTgghBRQe.aWvj4OrXAdAyqru7Aprp2VxHoFt78VZiudhNjeJfcgtQ6WimVLNPWLwHDlZW
+6l1y.bSPrNXb1bDLz3IxvPJBm6/9cZdLQYx3zDnXhgMwIDXx7XzAhQYx3IJfSFN6Ism0RV/u.SPgXOO
+JpDvZm3QFSZqaqdz.OuES8xvgM
+
+--IDIRECT_SIG_END--
+--IDIRECT_SIG_BEGIN--
+Name: boot-sectors.bin
+Comment: Signature of file '/tmp/pkgTempDir.nfbq4qhnwp/boot-sectors.bin.sha512'
+Type: IDIRECT_SIG_RSA_SHA512
+Signer: CN = iDirect_Corporate_Key_2006, C = US, ST = VA, O = iDirect, OU = CM
+1G6KJPg3a0O0O2nnZB40mwKc7Q5V4cw0351E7fkVgHAp0iulKxqYkNr/WmM9qOdN2iAYbbFXacFryZ9
+dgwxd/9m6jV6Qow6Sm9A021c8yANCq.fPgEQtxzbtqPJNFYBwoldFWWF0sKqgM5jcjEKKQyd8cpwyJW
+iWlkDCZzTfMlQ4O1ILYK5rB7Zgfk.2CGVUXoE1TIFgbv.qh1lmHl5DIHz9JgBuQ.uluJMVnVGiyIOKG
+.qgFVn1CtG0.MfRuR0OnQrhUYZ2sWW59YVjO.gR15u2ntPcSXfeY80tsjFqgsNr9vWtBNbS19AFOYcX
+DQlIe.NO7F7pryyIWB2XR3bNLz
+
+--IDIRECT_SIG_END--
+--IDIRECT_SIG_BEGIN--
+Name: package_install.sh
+Comment: Signature of file '/tmp/pkgTempDir.nfbq4qhnwp/package_install.sh.sha512'
+Type: IDIRECT_SIG_RSA_SHA512
+Signer: CN = iDirect_Corporate_Key_2006, C = US, ST = VA, O = iDirect, OU = CM
+0o5z1Ho18nnxUa5m5dlsKXRrgKz5hXq95je5I9zh1wt7Hse/HDxBaEUIc.ARZoJNwliRQDvWqu7/LLn
+zU9zHF2v08vPmFRLCql2xZm/mATnAHFj98MEfZL5qizbQpi/gFV1/U5mvrurtV8aTADoLWVGqeD0i/S
+nDqUKrdUJwjj4Ic/b7wGhVBvmwSS9HzIdDraM7GkE3Tr7fPW6xJU3heuh7MStO.rZlSsoNAfnD5N7kw
+xw8evOZQpEyeucZiJ/i1328m9htEiMg5Yp2wlRQXedmZm3.HSIRznIXTsb3BJT9oJRHZH0556LBbg0j
+55qhrHTy3RqbUVqjtc5JCZe5PU
+
+--IDIRECT_SIG_END--
+--IDIRECT_SIG_BEGIN--
+Name: rootfs.tar.bz2
+Comment: Signature of file '/tmp/pkgTempDir.nfbq4qhnwp/rootfs.tar.bz2.sha512'
+Type: IDIRECT_SIG_RSA_SHA512
+Signer: CN = iDirect_Corporate_Key_2006, C = US, ST = VA, O = iDirect, OU = CM
+.2PxwhK/1tO5X7V/9MB13b31IRpluTh4VFxfQIZJ6Ku3ZvC4YSDV97gLHLrdNs7Iu5kqvKooWeIPK9v
+zcIzo/flSnXxHzK/KEk08GcsrQnReI8VDlRiwNkPqpBkbjwwpInTvqN8dKx1/zUvrqc/q.9V5opxZYs
+S8YgLdR2nl6cL9YK1TfZtvJcy49dPcGBW6Qyy.kSyK2/Ob/kWmbrG/C.lV/SLOstO51ckmbX6v.gnb8
+/2ZhpP8LLpV8Sn.RcJS.oueilAaLBkZ./x30CFB/9y.q.ajrpEmkMTEcuX79Imu2L2a5trahFIQ3anQ
+Z5esPsJ4WBxmyient3q6oLPkSU
+
+--IDIRECT_SIG_END--
+--IDIRECT_SIG_BEGIN--
+Name: falcon_factory.json
+Comment: Signature of file '/tmp/pkgTempDir.nfbq4qhnwp/falcon_factory.json.sha512'
+Type: IDIRECT_SIG_RSA_SHA512
+Signer: CN = iDirect_Corporate_Key_2006, C = US, ST = VA, O = iDirect, OU = CM
+.405hS0F1B/Yo2RpzwZUwQBVT1TLW.YLnN/JkLYFyVDdvzfgkLEBeTmpxSTDZ7aFmKNZTV3ZP0M8guH
+AkjtNlVZTP3Y5Rs9St98veJHPHv2i0zXr42J9CbYIAY831ic8qSDr8fFLFjbvq1fB2lRnbw7i71lVMJ
+WpRGAigKZ2W3rujSOMmbvzUkWxJHIcDjxA6hM4R/AVX6Fhv3/0XWtLxhaWkcrVlkdqJrPKErYFxYLWJ
+9y4bLui.r7YjQIoW7ltV05FxLwclLc1NasQWRg6tkkmTD8cNzq6lFACJVqxSXX7n3HMa/H2zLCbmT3I
+Ch7EteLZJz5WPvmfgd6kWxv1Px
+
+--IDIRECT_SIG_END--
+--IDIRECT_SIG_BEGIN--
+Name: kern
+Comment: Signature of file '/tmp/pkgTempDir.nfbq4qhnwp/kern.sha512'
+Type: IDIRECT_SIG_RSA_SHA512
+Signer: CN = iDirect_Corporate_Key_2006, C = US, ST = VA, O = iDirect, OU = CM
+0frmq4a07cttFo5.wGGqFEH.3jGcKibss3Q0d1kdpGPHnqFiXag1MIrDkrImsajPxdtMj1.X80yPMha
+mDoFXAXqA6D2WJVdh38igAj4.H8bwgiR1DbU75Hn8HATiPYK6mSbbRkP2L0gtIjYk6c3/FyqB5WGSBm
+Xhfk1CvDqtLZAJysScP6BpUJYaDKjRhVWYp2IYfJGrFgIc6nj9uXeOKv0AmF/lI0sRBlJiS1sp7HhhM
+Bj/Dd3ogGLMVZc8FXPlOV7WwCMsvFkJNjgcoWgYCmPrvSVK0vPFryihuHE5hPKDvoiyGFuUf92dk.TM
+Tdd6Ykpcb44QtclpntKOsu08.m
+
+--IDIRECT_SIG_END--
+--IDIRECT_SIG_BEGIN--
+Name: boardModel.xlate
+Comment: Signature of file '/tmp/pkgTempDir.nfbq4qhnwp/boardModel.xlate.sha512'
+Type: IDIRECT_SIG_RSA_SHA512
+Signer: CN = iDirect_Corporate_Key_2006, C = US, ST = VA, O = iDirect, OU = CM
+11/XsPBN5H1Sx1zcL9ZlL6Kdn01kNmK2Wn/XmUlNk8SFZ1Sx/zi5O9ww4jvUFISqiKhYS8e/Gkr3rdL
+A5Bb8D3AQIfClinDzJuWj9Ehmvigkr8ymikeBbNZZtrP7fbWhjQDLs9orJmrRgXoUI9Ye0pdfWtpXRW
+EdJab.twg5ZryMukPdN/9cIkIkon7PoYcYBeCeyMd0vDAubAEDGrAxw5gecuOpXCnvDiDvNcLTQ21tR
+phE5OooulAJ6VbtEEZqFiKcXob3osvOsJXacMJkYuVLxR1ruQOg.luSPGT/Apo8YBintGLQ6SRUbV.h
+0nfGOGudsMdeZq83etynB01R16
+
+--IDIRECT_SIG_END--
+--IDIRECT_SIG_BEGIN--
+Name: sw_compat
+Comment: Signature of file '/tmp/pkgTempDir.nfbq4qhnwp/sw_compat.sha512'
+Type: IDIRECT_SIG_RSA_SHA512
+Signer: CN = iDirect_Corporate_Key_2006, C = US, ST = VA, O = iDirect, OU = CM
+07cy1ii4fCIpcbDWRiSpm6ZlJiHHFVxzvk45xjJWc0EtbD8anvrbUYIWYLamCJMWmgLtQxISC5Fjl9D
+BTqNNt4EFGfTBDwyRQw72aDno.KfkTpltGXVElnuPSCfPkx9M5WFIp/ON8bCLDfnjH6S3ra52Z2aAIj
+AeMcdVmAeDc02VJBC733h1ItL4lfw601E1k.1rs54AQFeGxLwHa7psJpuOrX0WTzSui0pe8Spfgy1Zx
+JvvW7GL84eiK1WrWtCuhGas8B9RR5S1M7NCTqJxpX84rdiQflz2BKOBJs/EjhZjM34qp/iVmi2ZDYzg
+hcwmBK6iHnd1bL486kT5JeogAp
+
+--IDIRECT_SIG_END--

@@ -1,0 +1,209 @@
+{
+    "POST": {
+        "parameters": {
+            "comp_attr_metadata_array": [],
+            "attr_metadata_array": [
+                {
+                    "default_value": "",
+                    "attr_name": "part_number",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "read_only":1,
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/identity",
+                        "data",
+                        "openbmip",
+                        "BPN"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "serial_number",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "read_only":1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/identity",
+                        "data",
+                        "openbmip",
+                        "BSN"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "manufacturer_id",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "read_only":1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/identity",
+                        "data",
+                        "openbmip",
+                        "MID"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "functional_id",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "read_only":1,
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/config/identity",
+                        "data",
+                        "openbmip",
+                        "FID"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "buc_lo_frequency",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "MHz",
+                    "read_only":1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/odu/buc/0",
+                        "data",
+                        "translation"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "software_version",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "read_only":1,
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/odu/buc/0",
+                        "data",
+                        "software_version"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "band_selection",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "read_only":1,
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/odu/buc/0",
+                        "data",
+                        "band"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "local_oscillator",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "read_only":1,
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/odu/buc"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "fan",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "read_only":1,
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/odu/buc"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "output",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "read_only":1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/odu/buc"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "temperature",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "°C",
+                    "max_length": 0,
+                    "read_only":1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/odu/buc/0"
+                    ],
+                    "field_details": {
+                        "chart_options": {
+                          "resource":"terminal/odu/buc/0",
+                          "field":"temperature",
+                          "type":"popover",
+                          "unit":"°C",
+                          "min": 0,
+                          "buffer": false,
+                          "maxpoints": 150,
+                          "resolutionbuffer": 30000,
+                          "resolutionlive": 5000,
+                          "tooltipoptions": {
+                            "title":"Temperature",
+                            "placement":"left"
+                          }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

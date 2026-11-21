@@ -1,0 +1,166 @@
+{
+    "POST": {
+        "parameters": {
+            "comp_attr_metadata_array": [],
+            "attr_metadata_array": [
+                {
+                    "default_value": "0",
+                    "attr_name": "rf_uplink_frequency",
+                    "hide_on_GUI": false,
+                    "attr_required": 1,
+                    "attr_type": "float",
+                    "step": "0.000001",
+                    "unit": "MHz",
+                    "range_end": "40000",
+                    "range_start": "0",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "disabled": 0,
+                    "option_list": [],
+                    "tooltips": [{
+                        "title": "RF Uplink Frequency",
+                        "placement": "right",
+                        "content": "<p>Obtain this test frequency from the satellite provider</p>"
+                    }]
+                },
+                {
+                    "default_value": "0",
+                    "attr_name": "start_frequency",
+                    "hide_on_GUI": true,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "MHz",
+                    "max_length": 0,
+                    "read_only": 1,
+                    "dependencies": "",
+                    "disabled": 0,
+                    "option_list": []
+                },
+                {
+                    "default_value": "0",
+                    "attr_name": "stop_frequency",
+                    "hide_on_GUI": true,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "MHz",
+                    "max_length": 0,
+                    "read_only": 1,
+                    "dependencies": "",
+                    "disabled": 0,
+                    "option_list": []
+                },
+                {
+                    "default_value": "--",
+                    "attr_name": "band_status",
+                    "hide_on_GUI": true,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "max_length": 0,
+                    "read_only": 1,
+                    "dependencies": "",
+                    "disabled": 0,
+                    "option_list": []
+                },
+                {
+                    "default_value": "0",
+                    "attr_name": "buc_lo_frequency",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "MHz",
+                    "read_only": 1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "disabled": 0,
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/odu/buc/",
+                        "data",
+                        "0",
+                        "translation"
+                    ]
+                },
+                {
+                    "default_value": "0",
+                    "attr_name": "lband_tx_frequency",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "MHz",
+                    "read_only": 1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "disabled": 0,
+                    "option_list": []
+                },
+                {
+                    "default_value": "0",
+                    "attr_name": "adjust_lband_transmit_power",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "float",
+                    "unit": "dBm",
+                    "range_end": "10",
+                    "range_start": "-35",
+                    "step": "0.5",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "disabled": 0,
+                    "option_list": [],
+                    "tooltips": [{
+                        "title": "Adjust L-Band Transmit Power",
+                        "placement": "left",
+                        "content": "<p>Increase transmit power by 0.5dB steps as instructed by NOC operator</p>"
+                    }]
+                },
+                {
+                    "attr_name": "modulation",
+                    "hide_on_GUI": false,
+                    "attr_required": 1,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_label": "",
+                    "disabled": 0,
+                    "option_list": {
+                        "CW":"CW",
+                        "BPSK":"BPSK",
+                        "QPSK":"QPSK",
+                        "8PSK":"8PSK"
+                    }
+                },
+                {
+                    "default_value": "0",
+                    "attr_name": "symbol_rate",
+                    "hide_on_GUI": false,
+                    "attr_required": 1,
+                    "attr_type": "float",
+                    "unit": "Ksps",
+                    "range_end": "7500",
+                    "range_start": "128",
+                    "step": "0.001",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "disabled": 0,
+                    "option_list": []
+                },
+                {
+                    "default_value": "0",
+                    "attr_name": "receiver",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "disabled": 0,
+                    "option_list": [
+                        "Receiver 1",
+                        "Receiver 2"
+                    ]
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,207 @@
+{
+    "POST": {
+        "parameters": {
+            "attr_metadata_array": [
+                {
+                    "default_value": "",
+                    "attr_name": "encapsulation",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "select",
+                    "option_label": "",
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": {
+                        "LEGS": "LEGS",
+                        "MPE": "MPE"
+                    }
+                },
+                {
+                    "default_value": "auto",
+                    "attr_name": "mode",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "select",
+                    "option_label": "",
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "disabled": 0,
+                    "option_list": {
+                        "AUTO": "Auto",
+                        "OFF": "Off",
+                        "MANUAL_DOWNSTREAM": "Manual Downstream"
+                    }
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "switch_type",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "select",
+                    "option_label": "",
+                    "unit": "",
+                    "required": true,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": {
+                        "EXTERNAL": "External",
+                        "IDIRECT": "iDirect"
+                    },
+                    "tooltips": [
+                        {
+                            "title": "Beam Selector Mode",
+                            "placement": "bottom",
+                            "content": "<ul><li>'iDirect': Automatic Beam Switching</li><li>'External': Client API, Command Line Debugging, Manual Beam Switching</li></ul>"
+                        }
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "beam",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "select",
+                    "option_label": "",
+                    "unit": "",
+                    "tooltips": [
+                        {
+                            "title": "Beam selection",
+                            "placement": "bottom",
+                            "content": "<p>Selecting a beam is optional and will prepopulate the downstream configuration below.</p>"
+                        }
+                    ],
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": {
+                        "-": "-"
+                    }
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "if_frequency",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "read_only": 1,
+                    "attr_type": "double precision",
+                    "unit": "MHz",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": []
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "rf_frequency",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "read_only": 1,
+                    "attr_type": "double precision",
+                    "unit": "MHz",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": []
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "symbol_rate",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "read_only": 1,
+                    "attr_type": "double precision",
+                    "unit": "Ksps",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": []
+                },
+                {
+                    "attr_name": "rolloff",
+                    "hide_on_GUI": false,
+                    "attr_required": 1,
+                    "attr_type": "text",
+                    "unit": "%",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_label": "",
+                    "option_list": {
+                        "0.05": "5",
+                        "0.1": "10",
+                        "0.2": "20"
+                    },
+                    "default_value": "0.05"
+                },
+                {
+                    "attr_name": "modulation",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "select",
+                    "option_label": "",
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "default_value": "0",
+                    "option_list": {
+                        "QPSK": "QPSK",
+                        "8PSK": "8PSK",
+                        "16APSK": "16APSK",
+                        "32APSK": "32APSK"
+                    },
+                    "field_details": {
+                        "modcods": {
+                            "QPSK": {
+                                "1_4": "1/4",
+                                "1_3": "1/3",
+                                "2_5": "2/5",
+                                "1_2": "1/2",
+                                "3_5": "3/5",
+                                "2_3": "2/3",
+                                "3_4": "3/4",
+                                "4_5": "4/5",
+                                "5_6": "5/6",
+                                "8_9": "8/9",
+                                "9_10": "9/10"
+                            },
+                            "8PSK": {
+                                "3_5": "3/5",
+                                "2_3": "2/3",
+                                "3_4": "3/4",
+                                "5_6": "5/6",
+                                "8_9": "8/9",
+                                "9_10": "9/10"
+                            },
+                            "16APSK": {
+                                "2_3": "2/3",
+                                "3_4": "3/4",
+                                "4_5": "4/5",
+                                "5_6": "5/6",
+                                "8_9": "8/9",
+                                "9_10": "9/10"
+                            },
+                            "32APSK": {
+                                "3_4": "3/4",
+                                "4_5": "4/5",
+                                "5_6": "5/6",
+                                "8_9": "8/9",
+                                "9_10": "9/10"
+                            }
+                        }
+                    }
+                },
+                {
+                    "attr_name": "coding",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "select",
+                    "option_label": "",
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "default_value": "0",
+                    "option_list": {
+                        "": ""
+                    }
+                }
+            ]
+        }
+    }
+}

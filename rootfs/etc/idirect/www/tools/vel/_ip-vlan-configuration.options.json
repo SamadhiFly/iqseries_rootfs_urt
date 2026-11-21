@@ -1,0 +1,290 @@
+{
+    "POST": {
+        "parameters": {
+            "comp_attr_metadata_array": [],
+            "attr_metadata_array": [
+                {
+                    "default_value": "",
+                    "attr_name": "1_subnet_mask",
+                    "attr_display_name": "subnet_mask",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "read_only":1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/ip/vlan",
+                        "data",
+                        "ip",
+                        "0",
+                        "eth",
+                        "netmask"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "1_ip_address",
+                    "attr_display_name": "ip_address",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "read_only":1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/ip/vlan",
+                        "data",
+                        "ip",
+                        "0",
+                        "eth",
+                        "address"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "1_dhcp_mode",
+                    "attr_display_name": "dhcp_mode",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "read_only":1,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/ip/vlan",
+                        "data",
+                        "ip",
+                        "0",
+                        "dhcp",
+                        "mode"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "1_lease_range_start",
+                    "attr_display_name": "lease_range_start",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "read_only":1,
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/ip/vlan",
+                        "data",
+                        "ip",
+                        "0",
+                        "dhcp",
+                        "v4"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "1_lease_range_end",
+                    "attr_display_name": "lease_range_end",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "read_only":1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/ip/vlan",
+                        "data",
+                        "ip",
+                        "0",
+                        "dhcp",
+                        "v4"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "1_lease_time",
+                    "attr_display_name": "lease_time",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "read_only": 1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/ip/vlan",
+                        "data",
+                        "ip",
+                        "0",
+                        "dhcp",
+                        "v4",
+                        "lease_time"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "1_primary_dhcp",
+                    "attr_display_name": "primary_dhcp",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "read_only":1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/ip/vlan",
+                        "data",
+                        "ip",
+                        "0",
+                        "dhcp",
+                        "v4",
+                        "DHCP",
+                        "0",
+                        "address"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "1_secondary_dhcp",
+                    "attr_display_name": "secondary_dhcp",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "read_only":1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/ip/vlan",
+                        "data",
+                        "ip",
+                        "0",
+                        "dhcp",
+                        "v4",
+                        "DHCP",
+                        "1",
+                        "address"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "1_default_gateway",
+                    "attr_display_name": "default_gateway",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "read_only":1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": [
+                        "terminal/ip/vlan",
+                        "data",
+                        "ip",
+                        "0",
+                        "dhcp",
+                        "v4",
+                        "default_gateway"
+                    ]
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "1_local_dns_name",
+                    "attr_display_name": "local_dns_name",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "read_only":1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": []
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "1_local_ip_address",
+                    "attr_display_name": "local_ip_address",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "read_only":1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": []
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "1_primary_dns_name",
+                    "attr_display_name": "primary_dns_name",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "read_only":1,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": []
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "1_primary_ip_address",
+                    "attr_display_name": "primary_ip_address",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "read_only":1,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": []
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "1_secondary_dns_name",
+                    "attr_display_name": "secondary_dns_name",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "read_only":1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": []
+                },
+                {
+                    "default_value": "",
+                    "attr_name": "1_secondary_ip_address",
+                    "attr_display_name": "secondary_ip_address",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "read_only":1,
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": [],
+                    "active_value": []
+                }
+            ]
+        }
+    }
+}

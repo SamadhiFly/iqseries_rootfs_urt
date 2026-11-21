@@ -1,0 +1,243 @@
+#!/bin/sh
+#
+# The Evolution and Velocity root filesystems for the iQDesktop are constructed slightly
+# differently. This post-install script normalizes some of those differences by symlinking the
+# corrected Velocity paths back to where Evolution expects them to be. This is because the
+# iQDesktop doesn't really have separate partitions like other iDirect remotes, but it inherits
+# pieces of the base factory image, which will frequently be Evolution for existing remotes, so
+# we have to work with it. This isn't as pretty as it would be on a 9-series remote, but it works.
+#
+
+temp_dir=$1
+update_dev=$2
+hardware_family=$3
+
+#===============================================================================================================
+#  For IQDesktop, antenna_ctrl binary image need to be removed in order to save 2M space
+#===============================================================================================================
+if [ "$hardware_family" = "IQDesktop" ]; then
+    /bin/rm -f $update_dev/usr/sbin/antenna_ctrl
+fi
+
+#===============================================================================================================
+#  Create directories missing from a fresh Evolution factory image.
+#===============================================================================================================
+for newdir in \
+    $update_dev/root \
+    /sysopt/config/certs \
+    /sysopt/config/network \
+    /sysopt/config/sat_router
+do
+    if [ ! -e $newdir ] && ! /bin/mkdir -p $newdir; then
+        echo "Post-Install: Failed to create directory ${newdir}." 1>&2
+        exit 1
+    fi
+done
+
+#===============================================================================================================
+#  Fix permissions.
+#===============================================================================================================
+if ! /bin/chmod 700 $update_dev/root; then
+    echo "Post-Install: Failed to fix the permissions on root's home directory." 1>&2
+    exit 1
+fi
+
+#===============================================================================================================
+#  Remove Evolution-isms that don't make sense, or we don't need, with URT binaries.
+#===============================================================================================================
+# Remove luarocks (~2.3M) from /mnt/factory and $update_dev,
+# and also /usr/share/lua (~728.0K).
+# We should be able to save at least 3MB per partition by doing this.
+#
+# DO NOT remove /usr/bin/lua as that is needed by the package_install.sh for the
+# u-boot env upgrade !
+for old_file in \
+    $update_dev/usr/sbin/dhcp \
+    $update_dev/usr/sbin/mewsh \
+    $update_dev/usr/lib/libmsrip.so \
+    $update_dev/usr/lib/libmetaswitch.so \
+    $update_dev/usr/lib/libmsbgp.so \
+    $update_dev/usr/lib/libmsospf.so \
+    $update_dev/usr/lib/libmscommon.so \
+    $update_dev/usr/lib/libmsmulticast.so \
+    $update_dev/*.ko \
+    $update_dev/www \
+    $update_dev/usr/bin/Mobility \
+    $update_dev/usr/lib/terminfo \
+    $update_dev/usr/share/terminfo \
+    $update_dev/usr/share/screen/utf8encodings \
+    $update_dev/usr/lib/luarocks \
+    $update_dev/usr/share/lua \
+    /mnt/factory/usr/lib/terminfo \
+    /mnt/factory/usr/share/terminfo \
+    /mnt/factory/usr/share/screen/utf8encodings \
+    /mnt/factory/usr/lib/luarocks \
+    /mnt/factory/usr/share/lua
+do
+    if ! /bin/rm -rf $old_file; then
+        echo "Post-Install: Failed to remove $old_file." 1>&2
+        exit 1
+    fi
+done
+
+#===============================================================================================================
+#  Soft link standard file locations back to where Evolution expects to find them.
+#===============================================================================================================
+unset extra_linkspec
+if [ -d $update_dev/opt/idirect/dsp_images ]; then
+    for dsp_image in $update_dev/opt/idirect/dsp_images/*.bin; do
+        image_name=`/usr/bin/basename $dsp_image`
+        extra_linkspec="$extra_linkspec $update_dev/usr/bin:../../opt/idirect/dsp_images/$image_name:$image_name"
+    done
+fi
+kernel_ver=`uname -r`
+if [ -z "$kernel_ver" ]; then
+    echo "Post-Install: Failed to get the kernel release." 1>&2
+    exit 1
+fi
+if [ -d $update_dev/lib/modules/$kernel_ver/kernel/drivers ]; then
+    for ko_file in $update_dev/lib/modules/$kernel_ver/kernel/drivers/*.ko; do
+        ko_name=`/usr/bin/basename $ko_file`
+        extra_linkspec="$extra_linkspec $update_dev/lib:modules/$kernel_ver/kernel/drivers/$ko_name:$ko_name"
+    done
+fi
+if [ -x $update_dev/etc/init.d/urt ]; then
+    extra_linkspec="$extra_linkspec $update_dev/etc:init.d/urt:sidu"
+    extra_linkspec="$extra_linkspec $update_dev/etc/init.d:bootmisc.sh:S50bigpig"
+    extra_linkspec="$extra_linkspec $update_dev/etc/init.d:save-rtc.sh:S50redis"
+    extra_linkspec="$extra_linkspec $update_dev/etc/init.d:urt:S60pcd"
+fi
+for linkspec in \
+    $update_dev/usr/bin:../sbin/bigpig:BigPig \
+    $update_dev/usr/bin:../../bin/mewsh:mewsh \
+    $update_dev/usr/bin:../sbin/sabine:Sabine \
+    $update_dev/usr/bin:../sbin/griffin:Griffin \
+    $update_dev/usr/bin:../sbin/tweety:Tweety \
+    $update_dev/usr/bin:../sbin/phyconfigurator:PhyConfigurator \
+    $update_dev/usr/bin:../sbin/sysmngr:sysmngr \
+    $update_dev/usr/bin:../sbin/pcd:pcd \
+    $update_dev/lib:../usr/lib/libipc.so:libipc.so \
+    $update_dev/lib:../usr/lib/libpcd.so:libpcd.so \
+    $extra_linkspec
+do
+    basedir=`echo $linkspec | /usr/bin/awk -F':' '{print $1}'`
+    target=`echo $linkspec | /usr/bin/awk -F':' '{print $2}'`
+    linkname=`echo $linkspec | /usr/bin/awk -F':' '{print $3}'`
+
+    if ! cd $basedir; then
+        echo "Post-Install: Failed to chdir to $basedir." 1>&2
+        exit 1
+    fi
+    if [ -e $target ] && ! /bin/ln -sf $target $linkname; then
+        echo "Post-Install: Failed to link $target to $basedir/$linkname." 1>&2
+        exit 1
+    fi
+    if ! cd $temp_dir; then
+        echo "Post-Install: Failed to chdir to $temp_dir." 1>&2
+        exit 1
+    fi
+done
+
+#===============================================================================================================
+#  Create the partinfo file required for backward compatibility with evolution install
+#===============================================================================================================
+
+PartBuild=""
+PartDateTime=""
+PartVersion=""
+
+while read; do
+	PartKeyname=`echo $REPLY | /usr/bin/awk -F'=' '{print $1}'`
+	if [ "$PartKeyname" = "ComponentVersion" ];then
+    	PartBuild=`echo $REPLY | /usr/bin/awk -F'=' '{print $2}'`
+    	PartVersion=`echo $PartBuild | /usr/bin/awk -F'-' '{print $1}'`
+	elif [ "$PartKeyname" = "DateTime" ];then
+    	PartDateTime=`echo $REPLY | /usr/bin/awk -F'=' '{print $2}'`
+	fi
+done < $update_dev/etc/idirect/versions/bsp
+
+rm -f $update_dev/etc/idirect/partinfo
+echo "build=$PartBuild" > $update_dev/etc/idirect/partinfo
+echo "time=$PartDateTime" >> $update_dev/etc/idirect/partinfo
+echo "name=Velocity Remote" >> $update_dev/etc/idirect/partinfo
+echo "description=iDirect Remote Terminal Application" >> $update_dev/etc/idirect/partinfo
+echo "version=$PartVersion" >> $update_dev/etc/idirect/partinfo
+
+#===============================================================================================================
+#  De-duplicate the Terminal Web GUI on all softparts.
+#===============================================================================================================
+mntdir=`dirname $update_dev 2>/dev/null`
+if [ -z "$mntdir" ] || [ "$mntdir" = '/' ]; then
+    echo "Post-Install: Failed to get the base mount directory from $update_dev." 1>&2
+    exit 1
+fi
+update_www="$update_dev/etc/idirect/www"
+if [ -d "$update_www" ]; then
+    # The Terminal Web GUI (in its totality) is one of the largest things on the remote. To save
+    # space, we only want one copy of it on disk at a time, but we also don't want to accidentally
+    # end up without a functional Terminal Web GUI if something goes wrong. Therefore de-duplicate
+    # the Terminal Web GUI on the factory partition last, to reduce the risk that we will break it.
+    # If something goes wrong, hopefully it goes wrong on our "trial run" while we're messing with
+    # the backup partition instead.
+    for check_dev in \
+        $mntdir/active0 \
+        $mntdir/active1 \
+        $mntdir/factory
+    do
+        if [ "$check_dev" = "$update_dev" ]; then
+            continue
+        fi
+        # There are three paths where the Terminal Web GUI may be installed on a softpart depending
+        # on the platform. Check all three of them (even though it is extremely unlikely that we
+        # will ever run into the last one).
+        #
+        # Install Path            | Platform
+        # ------------------------|-----------------
+        # /www                    | Evolution Sabine
+        # /etc/idirect/www        | URT Sabine
+        # /etc/idirect/falcon/www | Velocity Falcon
+        #
+        for check_www in \
+            $check_dev/www \
+            $check_dev/etc/idirect/www \
+            $check_dev/etc/idirect/falcon/www
+        do
+            if [ ! -d $check_www ]; then
+                continue
+            fi
+            for check_path in $check_www/*; do
+                # Don't delete the "tools" directory. While the most of the Terminal Web GUI
+                # remains the same between releases, or gets small bug fixes, the frontend options
+                # files contained in the "tools" directory are closely paired with the backend (in
+                # Sabine) and may really be different between releases.
+                if [ "$check_path" = "$check_www/tools" ]; then
+                    continue
+                fi
+                if ! /bin/rm -rf "$check_path"; then
+                    echo "Post-Install: Failed to delete $check_path." 1>&2
+                    exit 1
+                fi
+            done
+            for update_path in $update_www/*; do
+                # Don't clobber the frontend options files from the previous release. See the
+                # comments above where we skipped deleting this directory.
+                if [ "$update_path" = "$update_www/tools" ]; then
+                    continue
+                fi
+                update_filename=`basename $update_path 2>/dev/null`
+                if [ -z "$update_filename" ]; then
+                    echo "Post-Install: Failed to get the base filename of $update_path." 1>&2
+                    exit 1
+                fi
+                if ! /bin/cp -al "$update_path" "$check_www/$update_filename"; then
+                    echo "Post-Install: Failed to hard link $update_path to $check_www/$update_filename." 1>&2
+                    exit 1
+                fi
+            done
+        done
+    done
+else
+    echo "Post-Install: WARNING: $update_www does not exist." 1>&2
+fi
+
+exit 0

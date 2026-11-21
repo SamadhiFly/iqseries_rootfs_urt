@@ -1,0 +1,416 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          sysmngr
+# Required-Start:    $local_fs $network $remote_fs $syslog
+# Required-Stop:     $local_fs $network $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: iDirect Universal Remote Terminal
+# Description:       This init script is responsible for bringing up the remote
+#                    terminal. Specifically it manages Sabine, Griffin,
+#                    Mobility, Antenna Controller, Paddy, and other iDirect
+#                    remote processes. Stopping or restarting this service will
+#                    take the terminal out of network.
+### END INIT INFO
+
+# Constants
+readonly PATH=/sbin:/usr/sbin:/bin:/usr/bin
+readonly NAME=urt
+readonly SCRIPTNAME=/etc/init.d/$NAME
+readonly PCD_RUN_DIR="/var/tmp"
+readonly DAEMON_RUN_DIR="/var/run/idirect"
+readonly DAEMON_TERM_TIMEOUT=5
+
+# System Manager commands
+readonly SYSMNGR_STOP_CMD=2
+readonly SYSMNGR_START_CMD=3
+readonly SYSMNGR_RESTART_CMD=4
+readonly SYSMNGR_QUIT_CMD=5
+
+# Processes to be started by do_start().
+START_DAEMONS="/usr/bin/redis-server /usr/sbin/pcd"
+
+# Processes to be daemonized by do_start() (i.e. processes that do not daemonize themselves).
+DAEMONIZE_DAEMONS="redis-server pcd"
+
+# Processes to be killed by do_stop().
+#
+# NOTE: List parent processes first so that they will be killed before their
+# child processes. Child processes will be killed by this script only if their
+# parents fail to do so.
+#
+STOP_DAEMONS="sysmngr pcd redis-server velo_mobility antenna_ctrl paddymanager paddy gargoyle seagull sabine griffin fancontrol lcdmanager"
+
+# Define daemon args for do_start() here, using naming convention <DAEMON>_ARGS.
+PCD_ARGS="-f /etc/idirect/rules.pcd"
+REDIS_SERVER_ARGS="/etc/idirect/redis.conf"
+
+# All files created by this script should be readable and writable only by the
+# current user (root) by default
+umask 0077
+
+if [ -e /etc/default/urt ]; then
+	. /etc/default/urt
+fi
+
+# Source platform specific capabilities (how to reload firmware, drivers etc.)
+. /usr/libexec/urt/platform.sh
+
+# Check the environment to make sure that everything is setup correctly.
+do_check()
+{
+	# Return
+	#   0 if the environment is valid
+	#   2 if the environment is invalid
+
+	for daemon in $START_DAEMONS; do
+		if [ ! -x "$daemon" ]; then
+			logger -p daemon.err -s "Aborting $NAME $ACTION because $daemon does not exist"
+			return 2
+		fi
+	done
+
+	if ! which daemonizer 1>/dev/null 2>&1; then
+		logger -p daemon.err -s "Aborting $NAME $ACTION because \`daemonizer\` is not installed"
+		return 2
+	fi
+
+	return 0
+}
+
+# Stop the remote service.
+do_stop()
+{
+	# Return
+	#   0 if daemon has been stopped
+	#   1 if daemon was already stopped
+	#   2 if daemon could not be stopped
+	#   other if a failure occurred
+
+	ret=1
+	for daemon in $STOP_DAEMONS; do
+		if [ $LOAD_DAEMONS -eq 0 ]; then
+			if [ $ret -eq 1 ]; then
+				printf "%-25s" "Skipping daemon unload" 1>&2
+				echo "[OK]" 1>&2
+				ret=0
+			fi
+			continue
+		fi
+
+		printf "%-25s" "Stopping $daemon" 1>&2
+		logger -p daemon.info "Stopping $daemon"
+
+		if [ "x$(pidof $PIDOF_ARGS $daemon)" = 'x' ]; then
+			echo "[NOT RUNNING]" 1>&2
+		elif [ "$daemon" = 'pcd' ]; then
+			# We have to forcefully kill PCD. We can't send it SIGTERM like
+			# other processes, because if we give it the chance to terminate
+			# gracefully, it will reboot the remote.
+			if ! killall -9 $daemon 1>/dev/null 2>&1; then
+				echo "[FAILED]" 1>&2
+				logger -p daemon.err "Failed to kill $daemon"
+				ret=2
+			elif [ "x$(pidof $PIDOF_ARGS $daemon)" = 'x' ]; then
+				echo "[KILLED]" 1>&2
+				logger -p daemon.info "Killed $daemon successfully"
+				ret=0
+			else
+				echo "[ZOMBIE]" 1>&2
+				logger -p daemon.err "Zombie $daemon"
+				ret=2
+			fi
+		elif ! killall $daemon 1>/dev/null 2>&1; then
+			echo "[FAILED]" 1>&2
+			logger -p daemon.err "Failed to stop $daemon"
+			ret=2
+		else
+			# Give the daemon some time after we send it the TERM signal to
+			# cleanup and finally terminate.
+			sleep_count=0
+			while [ "x$(pidof $PIDOF_ARGS $daemon)" != 'x' ] && [ $sleep_count -lt $DAEMON_TERM_TIMEOUT ]; do
+				sleep 1
+				sleep_count=$((sleep_count+1))
+			done
+
+			if [ "x$(pidof $PIDOF_ARGS $daemon)" = 'x' ]; then
+				echo "[STOPPED]" 1>&2
+				logger -p daemon.info "Stopped $daemon successfully"
+				[ $ret -lt 2 ] && ret=0
+			else
+				logger -p daemon.err "$daemon failed to stop after $DAEMON_TERM_TIMEOUT seconds"
+				killall -9 $daemon 1>/dev/null 2>&1
+				sleep 1
+
+				if [ "x$(pidof $PIDOF_ARGS $daemon)" = 'x' ]; then
+					echo "[KILLED]" 1>&2
+					logger -p daemon.err "Killed $daemon violently"
+					[ $ret -lt 2 ] && ret=0
+				else
+					echo "[ZOMBIE]" 1>&2
+					logger -p daemon.err "Zombie $daemon"
+					ret=2
+				fi
+			fi
+		fi
+	done
+
+	# HACK: Technically fancontrol should have removed its own PID file when
+	# it terminated, but PCD has a tendency to force kill it, which wreaks
+	# havoc on the system the next time it tries to start fancontrol, and
+	# fancontrol refuses because it thinks another instance is running. Work
+	# around this insanity by removing fancontrol.pid now that we are sure
+	# fancontrol is stopped.
+	rm -f /var/run/fancontrol.pid
+
+	if [ $LOAD_DRIVERS -eq 1 ]; then
+		printf "%-25s" "Unloading drivers" 1>&2
+		logger -p daemon.info "Unloading drivers"
+		if do_unload_fw_and_drivers; then
+			sleep 1
+			echo "[OK]" 1>&2
+			logger -p daemon.info "Unloaded drivers"
+		else
+			sleep 1
+			echo "[FAILED]" 1>&2
+			logger -p daemon.err "Failed to unload drivers!"
+		fi
+	fi
+
+	# Technically System Manager should have taken care of this already, but
+	# go ahead and explicitly stop the hardware watchdog timer now, just in
+	# case.
+	if [ $LOAD_DAEMONS -eq 1 ]; then
+		printf "%-25s" "Stopping watchdog timer" 1>&2
+		logger -p daemon.info "Stopping the watchdog timer"
+		if do_watchdog_stop; then
+			echo "[STOPPED]" 1>&2
+			logger -p daemon.info "Stopped the watchdog timer"
+		else
+			echo "[FAILED]" 1>&2
+			logger -p daemon.err "Failed to stop the watchdog timer"
+			ret=2
+		fi
+	fi
+
+	return $ret
+}
+
+# Start the remote service.
+do_start()
+{
+	# Return
+	#   0 if daemon has been started
+	#   1 if daemon was already running
+	#   2 if daemon could not be started
+
+	# Normally we would not want to do this. Most LSB services are managed by
+	# PID, not by process name. However in this case we can assume certain
+	# things about our system configuration because the terminal is an embedded
+	# device entirely under our control. We know that we should not try to
+	# spawn another copy of Sabine if one is already running, regardless of
+	# whether it was started as a service (i.e. by this init script) or not.
+	for daemon in $STOP_DAEMONS; do
+		if [ "x$(pidof $PIDOF_ARGS $daemon)" != 'x' ]; then
+			return 1
+		fi
+	done
+
+	# Create the necessary runtime directories.
+	for run_dir in $DAEMON_RUN_DIR $PCD_RUN_DIR; do
+		if [ ! -d $run_dir ] && ! mkdir -p $run_dir; then
+			logger -p daemon.err -s "Aborting $NAME $ACTION because the run directory $run_dir could not be created"
+			return 2
+		fi
+	done
+
+	if echo $START_DAEMONS | grep -qs -e sysmngr -e pcd; then
+		# System Manager should start the watchdog timer itself if it is not
+		# already running, but go ahead and start it before we start System
+		# Manager just in case something goes wrong with System Manager itself
+		# before it gets a chance to start the watchdog.
+		if [ $LOAD_DAEMONS -eq 1 ]; then
+			printf "%-25s" "Starting watchdog timer" 1>&2
+			logger -p daemon.info "Starting the watchdog timer"
+			if do_watchdog_start; then
+				echo "[OK]" 1>&2
+				logger -p daemon.info "Started the watchdog timer"
+			else
+				echo "[FAILED]" 1>&2
+				logger -p daemon.err "Failed to start the watchdog timer"
+			fi
+		fi
+	elif [ $LOAD_DRIVERS -eq 1 ]; then
+		# Load the firmare and drivers before starting any services if we are
+		# running without System Manager. Otherwise we can skip this step
+		# because System Manager will load the drivers for us.
+		printf "%-25s" "Loading FW and drivers" 1>&2
+		logger -p daemon.info "Loading FW and rootfs drivers"
+		if ! do_load_fw_and_drivers; then
+			return 2
+		fi
+		echo "[OK]" 1>&2
+		logger -p daemon.info "Successfully loaded FW and rootfs drivers"
+	fi
+
+	if [ $LOAD_DAEMONS -eq 0 ]; then
+		printf "%-25s" "Skipping daemon loading" 1>&2
+		echo "[OK]" 1>&2
+		return 0
+	fi
+
+	for daemon in $START_DAEMONS; do
+		printf "%-25s" "Starting $(basename $daemon)" 1>&2
+		logger -p daemon.info "Starting $(basename $daemon)"
+
+		if echo "$DAEMONIZE_DAEMONS" | grep -qs "$(basename $daemon)"; then
+			daemonizer="$(which daemonizer 2>/dev/null)"
+		else
+			daemonizer=''
+		fi
+
+		args="$(eval echo \$$(basename $daemon | tr '[:lower:]' '[:upper:]' | tr '-' '_')_ARGS)"
+		if ! $daemonizer $daemon $args; then
+			echo "[FAILED]" 1>&2
+			logger -p daemon.err "Failed to start $(basename $daemon)"
+			sleep 1
+			return 2
+		fi
+
+		echo "[OK]" 1>&2
+		logger -p daemon.info "Started $(basename $daemon) successfully"
+	done
+
+	return 0
+}
+
+# Give the current status of the remote service.
+do_status()
+{
+	ret=0
+
+	for daemon in $STOP_DAEMONS; do
+		printf "%-25s" "$daemon"
+		if [ "x$(pidof $PIDOF_ARGS $daemon)" = 'x' ]; then
+			echo "[STOPPED]"
+			ret=3
+		else
+			echo "[RUNNING]"
+		fi
+	done
+
+	printf "%-25s" "watchdog timer"
+	do_watchdog_check
+	wdstatus=$?
+	if [ $wdstatus -eq 0 ]; then
+		echo "[ENABLED]"
+	elif [ $wdstatus -eq 1 ]; then
+		echo "[DISABLED]"
+	else
+		echo "[STATUS UNKNOWN]"
+	fi
+
+	return $ret
+}
+
+# Restart the remote service.
+do_restart()
+{
+	# If sysmngr is running, tell it to restart the services for us; otherwise
+	# we have to do it ourselves.
+	if pidof $PIDOF_ARGS sysmngr 1>/dev/null 2>&1; then
+		printf "%-25s" "Restarting services through sysmngr" 1>&2
+		logger -p daemon.info "Restarting services through sysmngr"
+
+		if ! redis-cli set PROCESS_CMD $SYSMNGR_RESTART_CMD; then
+			echo "[FAILED]" 1>&2
+			logger -p daemon.err "Failed to restart services"
+			return 2
+		fi
+
+		echo "[OK]" 1>&2
+
+		return 1
+	else
+		do_stop
+		stop_ret=$?
+
+		# This timeout is completely arbitrary. It is hopefully just long
+		# enough to work around any race conditions that we may have lurking.
+		sleep 2
+
+		# Contrary to the typical behavior of SysVInit scripts, try to start
+		# the service again regardless of whether the stop succeeded or not.
+		# This is because running this service is the whole point of the
+		# remote. If it isn't running, the remote isn't doing it's job. If
+		# something went really wrong, the watchdog will get us out of it.
+		do_start
+		start_ret=$?
+
+		if [ $start_ret -gt $stop_ret ]; then
+			ret=$start_ret
+		else
+			ret=$stop_ret
+		fi
+
+		return $ret
+	fi
+}
+
+# Reload remote's configuration.
+do_reload()
+{
+	# Most iDirect remote processes do not handle SIGHUP and cannot reload
+	# their configuration without restarting.
+	logger -p daemon.warning -s "$NAME does not support reloading"
+	return 2
+}
+
+LOAD_DRIVERS=1
+LOAD_DAEMONS=1
+
+while [ $# -gt 0 ]; do
+	if [ "$1" = '-n' ]; then
+		LOAD_DAEMONS=0
+	elif [ "$1" = '-s' ]; then
+		LOAD_DRIVERS=0
+	else
+		break
+	fi
+	shift
+done
+
+ACTION="$1"
+
+if ! do_check; then
+	exit 2
+fi
+
+case "$ACTION" in
+	start)
+		do_start
+		;;
+
+	stop)
+		do_stop
+		;;
+
+	status)
+		do_status
+		;;
+
+	reload)
+		do_reload
+		;;
+
+	restart)
+		do_restart
+		;;
+
+	*)
+		echo "Usage: $SCRIPTNAME [-n] [-s] start|stop|status|restart" 1>&2
+		echo "    -n     - Do not load any daemons (only load the drivers)" 1>&2
+		echo "    -s     - Do not load the drivers (only load the daemons)" 1>&2
+		exit 3
+		;;
+esac

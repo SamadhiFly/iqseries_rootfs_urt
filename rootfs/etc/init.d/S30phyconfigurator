@@ -1,0 +1,79 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          phyconfigurator
+# Required-Start:    $local_fs $syslog
+# Required-Stop:     $local_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start the iQ Desktop PhyConfigurator
+# Description:       This init script launches a one-off (non-persistent)
+#                    application that does two things (in sequence) on the
+#                    iQ Desktop, iQ Rackmount, and other related iQ-series
+#                    remote terminals:
+#                    1. Turns off clkout on Phy1 and Phy2
+#                    2. Resets Phy1 Phy2
+### END INIT INFO
+
+do_start()
+{
+	printf "Starting PhyConfigurator: " 1>&2
+	if [ -x /usr/sbin/phyconfigurator ]; then
+		if /usr/sbin/phyconfigurator; then
+			echo "[OK]" 1>&2
+			logger -p daemon.info "Started PhyConfigurator"
+			return 0
+		else
+			echo "[FAILED]" 1>&2
+			logger -p daemon.err "Failed to start /usr/sbin/phyconfigurator"
+			return 2
+		fi
+	elif [ -x /usr/bin/PhyConfigurator ]; then
+		if /usr/bin/PhyConfigurator; then
+			echo "[OK]" 1>&2
+			logger -p daemon.info "Started PhyConfigurator"
+			return 0
+		else
+			echo "[FAILED]" 1>&2
+			logger -p daemon.err "Failed to start /usr/bin/PhyConfigurator"
+			return 2
+		fi
+	fi
+
+	echo "[FAILED]" 1>&2
+	logger -p daemon.err "Could not find PhyConfigurator binary to start"
+	return 2
+}
+
+do_stop()
+{
+	# There is nothing to "stop". PhyConfigurator isn't persistent, and it
+	# doesn't provide any way to undo the changes it made (not that anyone
+	# should really want to undo them anyway).
+	return 0
+}
+
+do_restart()
+{
+	do_stop
+	do_start
+}
+
+case "$1" in
+	start)
+		do_start
+		;;
+
+	stop)
+		do_stop
+		;;
+
+	restart|reload)
+		do_restart
+		;;
+
+	*)
+		echo "Usage: $0 start|stop|restart"
+		exit 1
+esac
+
+exit $?

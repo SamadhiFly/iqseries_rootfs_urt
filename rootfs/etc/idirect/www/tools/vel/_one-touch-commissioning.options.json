@@ -1,0 +1,22 @@
+{
+    "POST": {
+        "parameters": {
+            "comp_attr_metadata_array": [],
+            "attr_metadata_array": [
+                {
+                    "attr_name": "rx_clear",
+                    "hide_on_GUI": false,
+                    "attr_required": 1,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": {
+                        "0": "Receiver 1"
+                    },
+                    "default_value": "0"
+                }
+            ]
+        }
+    }
+}

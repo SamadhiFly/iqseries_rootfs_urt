@@ -1,0 +1,164 @@
+{
+    "POST": {
+        "parameters": {
+            "comp_attr_metadata_array": [],
+            "attr_metadata_array": [
+                {
+                    "default_value": "0",
+                    "attr_name": "remote_latitude",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "float",
+                    "unit": "°",
+                    "viewMode": "true",
+                    "max_length": 0,
+                    "range_start": "0",
+                    "range_end": "90",
+                    "step": "0.0001",
+                    "dependencies": "",
+                    "option_list": []
+                },
+                {
+                    "attr_name": "remote_latitude_direction",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_label": "",
+                    "disabled": 0,
+                    "option_list": {
+                        "North":"North",
+                        "South":"South"
+                    }
+                },
+                {
+                    "default_value": "0",
+                    "attr_name": "remote_longitude",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "float",
+                    "unit": "°",
+                    "range_start": "0",
+                    "range_end": "180",
+                    "step": "0.0001",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": []
+                },
+                {
+                    "attr_name": "remote_longitude_direction",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_label": "",
+                    "disabled": 0,
+                    "option_list": {
+                        "East":"East",
+                        "West":"West"
+                    }
+                },
+                {
+                    "default_value": "0",
+                    "attr_name": "spacecraft_longitude",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "float",
+                    "unit": "°",
+                    "range_start": "0",
+                    "range_end": "180",
+                    "step": "0.0001",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": []
+                },
+                {
+                    "attr_name": "spacecraft_longitude_direction",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "unit": "",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_label": "",
+                    "disabled": 0,
+                    "option_list": {
+                        "East":"East",
+                        "West":"West"
+                    }
+                },
+                {
+                    "default_value": "0",
+                    "attr_name": "elevation_true",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "read_only": 1,
+                    "unit": "° (Horizontal = 0° Straight up = +90°)",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": []
+                },
+                {
+                    "default_value": "0",
+                    "attr_name": "elevation_offset",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "float",
+                    "step": "1.0000",
+                    "unit": "°",
+                    "range_start": "0",
+                    "range_end": "90",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": []
+                },
+                {
+                    "default_value": "0",
+                    "attr_name": "elevation_actual",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "read_only": 1,
+                    "unit": "degrees (Actual = True - Offset)",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": []
+                },
+                {
+                    "default_value": "0",
+                    "attr_name": "azimuth_true",
+                    "hide_on_GUI": false,
+                    "attr_required": 0,
+                    "attr_type": "true",
+                    "read_only": 1,
+                    "unit": "° (Geographic north = 0°)",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": []
+                },
+                {
+                    "default_value": "0",
+                    "attr_name": "polarization_offset",
+                    "hide_on_GUI": false,
+                    "tooltips": [{
+                        "title": "Polarization Offset",
+                        "placement": "left",
+                        "content": "<p>For an observer facing the feed (toward the satellite), positive is clockwise.</p><p>For an observer facing the dish, positive is counter-clockwise.</p><p>Assumes horizontal downlink. If the downlink polarization is vertical, the correct polarization offset is the calculated result minus 90 degrees.</p>"
+                    }],
+                    "attr_required": 0,
+                    "attr_type": "text",
+                    "read_only": 1,
+                    "unit": "° (Polarization Angle Sense)",
+                    "max_length": 0,
+                    "dependencies": "",
+                    "option_list": []
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,38 @@
+<package_summary>
+	<name>iqseries_rootfs</name>
+	<content_type>rootfs</content_type>
+	<code_version>3.5.2.1</code_version>
+	<build_number>12131</build_number>
+	<comment>iDirect terminal applications</comment>
+	<creation_info>
+		<date>2023.12.08-11:30:44</date>
+		<company>iDirect</company>
+		<user>root</user>
+		<host>bld-us-e1a-07.idirect.net</host>
+		<branch>release/vel-3.5</branch>
+		<filename>iqseries_rootfs_urt_3.5.2.1-12131.pkg</filename>
+	</creation_info>
+	<target>
+		<hardware_family>sidu</hardware_family>
+		<software_family>iqseries</software_family>
+		<product_group>URT</product_group>
+	</target>
+	<offset_objects>
+		<file>rootfs.tar.bz2</file>
+	</offset_objects>
+	<manifest>
+		<file>common_10_128M</file>
+		<file>install_file_map</file>
+		<file>postinstall</file>
+		<file>package_summary.xml</file>
+		<file>idirect-release</file>
+		<file>version</file>
+		<file>boot-sectors.bin</file>
+		<file>package_install.sh</file>
+		<file>rootfs.tar.bz2</file>
+		<file>falcon_factory.json</file>
+		<file>kern</file>
+		<file>boardModel.xlate</file>
+		<file>sw_compat</file>
+	</manifest>
+</package_summary>

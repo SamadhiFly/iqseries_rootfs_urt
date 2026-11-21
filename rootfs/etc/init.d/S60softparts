@@ -1,0 +1,61 @@
+#!/bin/sh
+#
+# FIXME: This script overrides /etc/init.d/S60softparts from the Evolution
+# factory image for the iQ Desktop. It is a workaround for a race condition in
+# the init order where /opt/idirect/scripts/soft_parts.sh assumes that
+# redis-server is already running, but it hasn't finished initializing yet.
+#
+
+# Wait for up to 10 seconds for Redis to start before giving up.
+REDIS_WAIT_TIMEOUT=10
+
+# Absolute path of the script to populate the software partitions
+SOFT_PART_SCRIPT=/opt/idirect/scripts/soft_parts.sh
+
+# Absolute path of the file describing our current partition
+IDIRECT_PARTITION=/tmp/IDIRECT_PARTITION
+
+start() {
+	printf "Populating soft partitions: "
+	umask 077
+
+	# Make sure that we create the partition file regardless of whether Redis
+	# is up or not. The software partitions script will recreate it
+	# automatically when it populates the partitions in Redis if we get that
+	# far.
+	if [ ! -e $IDIRECT_PARTITION ]; then
+		cat /proc/cmdline | egrep -o 'partition=\S+' | cut -d= -f2- > $IDIRECT_PARTITION
+	fi
+
+	timeout=0
+	while ! redis-cli get all 1>/dev/null 2>&1; do
+		if [ $timeout -ge $REDIS_WAIT_TIMEOUT ]; then
+			echo "TIMEOUT! redis-server is not up" 1>&2
+			exit 1
+		else
+			sleep 1
+			timeout=$((timeout+1))
+		fi
+	done
+
+	if [ ! -x $SOFT_PART_SCRIPT ]; then
+		chmod 755 $SOFT_PART_SCRIPT
+	fi
+	$SOFT_PART_SCRIPT
+}
+
+
+case "$1" in
+	start)
+		start
+		;;
+	stop)
+		;;
+	restart|reload)
+		;;
+	*)
+		echo "Usage: $0 {start|stop|restart}"
+		exit 1
+esac
+
+exit $?

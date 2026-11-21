@@ -1,0 +1,57 @@
+{
+    "POST": {
+        "parameters": {
+            "attr_metadata_array": [
+              {
+                  "attr_name": "combine_receiver",
+                  "attr_display_name": "combine_receiver",
+                  "hide_on_GUI": false,
+                  "attr_required": 0,
+                  "attr_type": "checkbox",
+                  "unit": "",
+                  "field_details": {
+                      "id": "combine_receiver"
+                  },
+                  "max_length": 0,
+                  "dependencies": "",
+                  "option_label": "",
+                  "disabled": 0,
+                  "option_list": {}
+              },
+              {
+                  "default_value": "",
+                  "attr_name": "combine_receivertt",
+                  "attr_display_name": "combine_receiver",
+                  "tooltips": [{
+                      "title": "Receiver",
+                      "placement": "bottom",
+                      "content": "Both receivers have to be in mode 'MANUAL_DOWNSTREAM' and use the same encapsulation. Please update the configuration below and save the individual receivers."
+                  }],
+                  "hide_on_GUI": false,
+                  "attr_required": 0,
+                  "read_only": 1,
+                  "attr_type": "text",
+                  "unit": "",
+                  "max_length": 0,
+                  "dependencies": "",
+                  "option_list": []
+              },
+              {
+                  "default_value": "",
+                  "attr_name": "encapsulation",
+                  "hide_on_GUI": false,
+                  "attr_required": 0,
+                  "attr_type": "select",
+                  "option_label": "",
+                  "unit": "",
+                  "max_length": 0,
+                  "dependencies": "",
+                  "option_list": {
+                      "LEGS": "LEGS",
+                      "MPE": "MPE"
+                  }
+              }
+            ]
+        }
+    }
+}
